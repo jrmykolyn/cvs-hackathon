@@ -205,9 +205,256 @@ This sample showcases how to build a product page in AMP HTML.
       right: 0;
     }
 
+
+
+    
+
+    
+    /* ==========================================================================
+       CVSUI - Reset
+       ========================================================================== */
+
+
+    body {
+      margin: 0;
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.5;
+      font-weight: normal;
+      color: #333;
+      text-align: left;
+      background-color: #fff;
+    }
+
+    body.cvsui-is-fixed {
+      position: fixed;
+    }
+
+    .lt-ie9 * {
+      -webkit-filter: none !important;
+      filter: none !important;
+    }
+
+    [hidden] {
+      display: none !important;
+    }
+
+    code {
+      font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 12px;
+      line-height: 1.5;
+      color: #a50000;
+      word-break: break-word;
+      background-color: #f2f2f2;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 2px 4px;
+    }
+
+    a > code {
+      color: inherit;
+    }
+
+    pre {
+      display: block;
+      font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 12px;
+      line-height: 1.5;
+      color: #333;
+      background-color: #f2f2f2;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 16px;
+    }
+
+    pre code {
+      padding: 0;
+      font-size: inherit;
+      color: inherit;
+      word-break: normal;
+      background-color: inherit;
+      border: none;
+    }
+
+    .cvsui-u-pre--scrollable {
+      max-height: 180px;
+      overflow-y: scroll;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin: 0;
+      font-family: Helvetica, Arial, sans-serif;
+      font-weight: bold;
+      line-height: 1.2;
+      color: #000;
+    }
+
+    h1 {
+      font-size: 36px;
+      line-height: 1.2;
+      letter-spacing: -1.5px;
+    }
+
+    h2 {
+      font-size: 28px;
+      line-height: 1.2;
+      letter-spacing: -1px;
+    }
+
+    h3 {
+      font-size: 22px;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+    }
+
+    h4 {
+      font-size: 18px;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+    }
+
+    h5 {
+      font-size: 16px;
+      line-height: 1.2;
+    }
+
+    h6 {
+      font-size: 14px;
+      line-height: 1.2;
+    }
+
+    hr {
+      box-sizing: content-box;
+      height: 0;
+      margin: 0;
+      overflow: visible;
+      clear: both;
+      border: 0;
+      border-top: 1px solid #ccc;
+    }
+
+    html {
+      font-family: sans-serif;
+      line-height: 1.15;
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+      -ms-overflow-style: scrollbar;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    @-ms-viewport {
+      width: device-width;
+    }
+
+    kbd {
+      padding: 2px 4px;
+      font-size: 14px;
+      line-height: 1.5;
+      font-weight: bold;
+      color: #fff;
+      background-color: #000;
+      border-radius: 4px;
+    }
+
+    kbd kbd {
+      padding: 0;
+      font-size: 100%;
+      font-weight: bold;
+    }
+
+    a {
+      line-height: inherit;
+      color: #333;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    a:visited {
+      color: #767676;
+    }
+
+    a:focus {
+      color: #333;
+    }
+
+    a:hover {
+      color: #767676;
+    }
+
+    a:active {
+      color: #a50000;
+    }
+
+    a img {
+      border: 0;
+    }
+
+    ul,
+    ol,
+    dl {
+      list-style-position: outside;
+      line-height: 1.5;
+    }
+
+    li {
+      font-size: inherit;
+    }
+
+    ul {
+      margin-left: 24px;
+      list-style-type: disc;
+    }
+
+    ol {
+      margin-left: 24px;
+    }
+
+    ul ul, ol ul, ul ol, ol ol {
+      margin-top: 0;
+      margin-left: 24px;
+    }
+
+    dl dt {
+      font-weight: bold;
+    }
+
+    p {
+      font-size: inherit;
+      line-height: 1.5;
+    }
+
+    em,
+    i {
+      font-style: italic;
+      line-height: inherit;
+    }
+
+    strong,
+    b {
+      font-weight: bold;
+      line-height: inherit;
+    }
+
+    small {
+      font-size: 12px;
+      line-height: inherit;
+      font-weight: normal;
+    }
+
+    mark {
+      padding: 2px;
+      background-color: #fff6d0;
+    }
+
     /* ==========================================================================
        CVSUI - Global
        ========================================================================== */
+
 
     body {
       margin: 0;
