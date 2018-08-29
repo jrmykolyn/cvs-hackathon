@@ -11,29 +11,30 @@ This sample showcases how to build a product page in AMP HTML.
 <!-- -->
 <!doctype html>
 <html ⚡>
+
 <head>
-    <meta charset="utf-8">
+  <meta charset="utf-8">
   <title>Product Page</title>
-    <meta name="amp-experiment-token" content="HfmyLgNLmblRg3Alqy164Vywr">
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <meta name="amp-experiment-token" content="HfmyLgNLmblRg3Alqy164Vywr">
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
 
-    <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
-    <script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"></script>
-    <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
-    <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
-    <script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
-    <script async custom-element="amp-lightbox" src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js"></script>
-    <script async custom-element="amp-image-lightbox" src="https://cdn.ampproject.org/v0/amp-image-lightbox-0.1.js"></script>
-    <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
-    <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
-    <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
-    <script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"></script>
-    <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
-    <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+  <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+  <script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"></script>
+  <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
+  <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
+  <script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
+  <script async custom-element="amp-lightbox" src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js"></script>
+  <script async custom-element="amp-image-lightbox" src="https://cdn.ampproject.org/v0/amp-image-lightbox-0.1.js"></script>
+  <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+  <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+  <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+  <script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"></script>
+  <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+  <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
 
-    <link rel="canonical" href="<%host%>/samples_templates/product_page/">
-    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-    <style amp-custom>
+  <link rel="canonical" href="<%host%>/samples_templates/product_page/">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <style amp-custom>
     <%>css/product.css%>
     #product-description {
       clear: both;
@@ -370,130 +371,200 @@ This sample showcases how to build a product page in AMP HTML.
        Page Header
        ========================================================================== */
     
+       .gbcvs-c-pageHd {
+      padding: 16px 0;
+      background-color: #fff; }
+
+    .gbcvs-c-pageHd__inner {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-direction: column; }
+
+    .gbcvs-c-pageHd__l-right {
+      padding-bottom: 4px; }
+
+    .gbcvs-c-pageHd__breadcrumb--mb16 {
+      margin-bottom: 16px; }
+
     .gbcvs-c-pageHd__heading {
-      color: #000;
       display: block;
-      font-size: 28px;
-      font-weight: 700;
-      letter-spacing: -1px;
-      line-height: 1.2;
       margin: 0;
       padding: 0;
+      font-size: 28px;
+      line-height: 1.2;
+      letter-spacing: -1px;
+      color: #000;
+      font-weight: bold; }
+
+      .shoppdp-t-amp .gbcvs-c-pageHd {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+
+      .shoppdp-t-amp .gbcvs-c-pageHd__heading {
+        font-size: 20px;
+        letter-spacing: -.5px;
+      }
+
+
+  /* ==========================================================================
+     Product Pricing
+     ========================================================================== */
+  
+    .shoppdp-c-productPricing__promotion,
+    .shoppdp-c-productPricing__promoLabel {
+      font-size: 14px;
+      font-weight: bold;
+      line-height: 1.2;
+      color: #c00; }
+      @media (min-width: 768px) {
+        .shoppdp-c-productPricing__promotion,
+        .shoppdp-c-productPricing__promoLabel {
+          font-size: 16px; } }
+
+    .shoppdp-c-productPricing__actual {
+      font-size: 28px;
+      font-weight: bold;
+      line-height: 1;
+      color: #c00; }
+      @media (min-width: 768px) {
+        .shoppdp-c-productPricing__actual {
+          font-size: 42px; } }
+
+    .shoppdp-c-productPricing__savings {
+      font-size: 14px;
+      font-weight: bold;
+      line-height: 1.2;
+      color: #000; }
+
+    .shoppdp-c-productPricing__reg {
+      font-size: 14px;
+      line-height: 1.2;
+      color: #333; }
+
+    .shoppdp-c-productPricing__unit {
+      font-size: 12px;
+      line-height: 1.2;
+      font-weight: 400;
+      color: #767676; }
+
+    .shoppdp-c-productPricing__ovp {
+      display: none;
+      font-size: 12px;
+      line-height: 1.2;
+      font-weight: 400;
+      color: #333; }
+
+    .shoppdp-c-productPricing__strikethrough {
+      text-decoration: line-through; }
+
+    .shoppdp-c-productPricing__infoIcon {
+      cursor: pointer;
+      display: inline; }
+
+    .shoppdp-c-productPricing {
+      width: 100%; }
+
+    .shoppdp-c-productPricing__primaryDescGroup,
+    .shoppdp-c-productPricing__secondaryDescGroup {
+      display: flex;
+      flex-flow: column wrap;
+      justify-items: center;
+      align-content: flex-start;
+      flex-grow: 1; }
+
+    .shoppdp-c-productPricing__secondaryDescGroup {
+      display: none;
+      text-align: right; }
+
+    .shoppdp-c-productPricing__allInfo p,
+    .shoppdp-c-productPricing__primaryDescGroup p {
+      margin-top: 4px; }
+
+    .shoppdp-t-amp .shoppdp-c-productPricing {
+      margin-top: 16px;
+      padding-left: 16px;
+      padding-right: 16px;
     }
     
 
-    </style>
+  </style>
 
-    <!-- ## Metadata -->
-    <!-- The page indexing requires schema.org markup for one of the following types: Type, AggregateRating, Offers. [Learn more](https://developers.google.com/structured-data/carousels/top-stories#markup_specification). -->
-    <script type="application/ld+json">
+  <!-- ## Metadata -->
+  <!-- The page indexing requires schema.org markup for one of the following types: Type, AggregateRating, Offers. [Learn more](https://developers.google.com/structured-data/carousels/top-stories#markup_specification). -->
+  <script type="application/ld+json">
     {
-        "@context": "http://schema.org/",
-        "@type": "Product",
-        "name": "Apple",
-        "image": "http://www.ampbyexample.com/img/golden_apple1_1024x682.jpg",
-        "description": "Lorem ipsum",
-        "mpn": "925872",
-        "brand": {
-            "@type": "Fruit",
-            "name": "Apple"
-        },
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.4",
-            "reviewCount": "88"
-        },
-        "offers": {
-            "@type": "Offer",
-            "priceCurrency": "USD",
-            "price": "1.99",
-            "priceValidUntil": "2020-11-05",
-            "itemCondition": "http://schema.org/UsedCondition",
-            "availability": "http://schema.org/InStock",
-            "seller": {
-                "@type": "Retail",
-                "name": "AMP by Example"
-            }
+      "@context": "http://schema.org/",
+      "@type": "Product",
+      "name": "Apple",
+      "image": "http://www.ampbyexample.com/img/golden_apple1_1024x682.jpg",
+      "description": "Lorem ipsum",
+      "mpn": "925872",
+      "brand": {
+        "@type": "Fruit",
+        "name": "Apple"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.4",
+        "reviewCount": "88"
+      },
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": "1.99",
+        "priceValidUntil": "2020-11-05",
+        "itemCondition": "http://schema.org/UsedCondition",
+        "availability": "http://schema.org/InStock",
+        "seller": {
+          "@type": "Retail",
+          "name": "AMP by Example"
         }
+      }
     }
-    </script>
+  </script>
 
-    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
-    </head>
-    <body>
+  <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript>
+    <style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style>
+  </noscript>
+</head>
 
-      <!-- ## Navigation -->
-      <!-- Use the [amp-sidebar](/components/amp-sidebar/) component to give customers the chance to quickly jump to any of your product categories.-->
-      <amp-sidebar id="drawermenu" layout="nodisplay">
-        <a href="/" class="caps text-decoration-none block p1">Products</a>
-        <hr/>
-        <a class="caps text-decoration-none block p1" href="/samples_templates/product_browse_page/preview/">Fruit</a>
-        <a class="caps text-decoration-none block p1" href="/samples_templates/product_browse_page/preview/">Vegetable</a>
-        <a class="caps text-decoration-none block p1" href="/samples_templates/product_browse_page/preview/">More</a>
-      </amp-sidebar>
-      <!-- ## Header with Search -->
-      <!-- AMP supports forms, which means you can directly integrate a product search into your AMPs. Try searching for "Apple".-->
-      <!-- AMP doesn't support custom Javascript, but you can use CSS3 animations to enrich your page. The expanding text field when the search box is focused is implemented with CSS only.-->
-      <div class="header">
-        <a id="sample-menu" on="tap:drawermenu.toggle">
-          <amp-img srcset="/img/ic_menu_white_1x_web_24dp.png 1x, /img/ic_menu_white_2x_web_24dp.png 2x"
-                  width="24" height="24"
-                  alt="navigation"></amp-img>
-        </a>
-        <form method="GET" action="/samples_templates/product_browse_page[[.Mode]]/search" target="_top">
-          <!-- <input name="search" type="search" placeholder="Search"> -->
-          <a id="sample-logo" href="/">CVS Pharmacy</a>
-          <!-- <input type="submit" value=""> -->
-        </form>
-      </div>
+<body>
 
-      <section class="gbcvs-c-pageHd">
-        <h2 class="m1 gbcvs-c-pageHd__heading">Wrigley's Orbit Gum, 40 CT</h2>
-      </section>
+  <div class="shoppdp-t-amp">
 
-      <!-- ## Social Sharing -->
-      <!-- The Social Share extension provides a common interface for share buttons. Learn more about `amp-social-share` [here](/components/amp-social-share/). -->
-      <!-- <div class="m1">
-        <amp-social-share type="twitter"
-                          width="30"
-                          height="22"></amp-social-share>
-        <amp-social-share type="facebook"
-                          width="30"
-                          height="22"
-                          data-attribution="254325784911610"></amp-social-share>
-        <amp-social-share type="gplus"
-                          width="30"
-                          height="22"></amp-social-share>
-        <amp-social-share type="email"
-                          width="30"
-                          height="22"></amp-social-share>
-        <amp-social-share type="pinterest"
-                          width="33"
-                          height="22"></amp-social-share>
-      </div> -->
+    <!-- ## Navigation -->
+    <!-- Use the [amp-sidebar](/components/amp-sidebar/) component to give customers the chance to quickly jump to any of your product categories.-->
+    <amp-sidebar id="drawermenu" layout="nodisplay">
+      <a href="/" class="caps text-decoration-none block p1">Products</a>
+      <hr />
+      <a class="caps text-decoration-none block p1" href="/samples_templates/product_browse_page/preview/">Fruit</a>
+      <a class="caps text-decoration-none block p1" href="/samples_templates/product_browse_page/preview/">Vegetable</a>
+      <a class="caps text-decoration-none block p1" href="/samples_templates/product_browse_page/preview/">More</a>
+    </amp-sidebar>
+    <!-- ## Header with Search -->
+    <!-- AMP supports forms, which means you can directly integrate a product search into your AMPs. Try searching for "Apple".-->
+    <!-- AMP doesn't support custom Javascript, but you can use CSS3 animations to enrich your page. The expanding text field when the search box is focused is implemented with CSS only.-->
+    <div class="header">
+      <a id="sample-menu" on="tap:drawermenu.toggle">
+        <amp-img srcset="/img/ic_menu_white_1x_web_24dp.png 1x, /img/ic_menu_white_2x_web_24dp.png 2x" width="24" height="24" alt="navigation"></amp-img>
+      </a>
+      <form method="GET" action="/samples_templates/product_browse_page[[.Mode]]/search" target="_top">
+        <!-- <input name="search" type="search" placeholder="Search"> -->
+        <a id="sample-logo" href="/">CVS Pharmacy</a>
+        <!-- <input type="submit" value=""> -->
+      </form>
+    </div>
 
-      <p id="product-description" class="m1">Lorem ipsum dolor sit amet, ut sed non vel mattis. Et nulla suscipit ante ligula nisl in. Ut venenatis et mauris, mauris porta vulputate tellus mauris integer facilisis.</p>
-      <!-- ## Video -->
-      <!-- AMP supports a wide range of video platforms. Here we are using `amp-youtube` to show a product video. You can find an overview of all supported video platforms [here](/advanced/integrating_videos_in_amp_an_overview/).-->
-      <!-- In this sample we don't embed the video directly into the page, but instead show it in a lightbox using the `amp-lightbox` component. Learn more about `amp-lightbox` [here](/components/amp-lightbox/).-->
-
-      <button class="ampstart-btn caps m1 mb3" on="tap:watch-video-lightbox" >
-        Show Video
-      </button>
-
-      <amp-lightbox id="watch-video-lightbox" layout="nodisplay">
-        <div class="amp-youtube-container">
-          <div class="video">
-            <a on="tap:watch-video-lightbox.close" role="button" tabindex="0">
-              Close
-            </a>
-            <amp-youtube width="480" height="270"
-                                     layout="responsive"
-                                     data-videoid="lBTCB7yLs8Y">
-            </amp-youtube>
-          </div>
+    <section class="gbcvs-c-pageHd">
+      <div class="gbcvs-c-pageHd__inner">
+        <div class="gbcvs-c-pageHd__l-left">
+          <h1 class="m1 gbcvs-c-pageHd__heading">Wrigley's Orbit Gum, 40 CT</h1>
         </div>
-      </amp-lightbox>
+      </div>
+    </section>
+
     <!-- ## Slides preview Gallery -->
     <!--On desktop we've added a film strip like slide preview. Each product colour has its own image gallery and slide preview.
     We use [amp-bind](https://www.ampproject.org/docs/reference/components/amp-bind) to update the page selecting the gallery and image preview
@@ -503,177 +574,114 @@ This sample showcases how to build a product page in AMP HTML.
     Clicking on a preview image will reveal the image in the gallery via the tap action `on="tap:AMP.setState({product: {selectedSlideForGreen: 0}})"`.
 
     See below for more informations on how we use`amp-bind`. -->
-  <div class="product-gallery">
-    <ul [hidden]="product.selectedColor != 'green'">
-      <li>
-        <amp-img on="tap:AMP.setState({product: {selectedSlideForGreen: 0}})"
-                  src="/img/green_apple_1_60x40.jpg"
-                  width="60" height="40"
-                  class="selected"
-                  [class]="product.selectedSlideForGreen == 0 ? 'selected' : '' "
-                  tabindex="0" role="button">
-        </amp-img>
-      </li>
-      <li>
-        <amp-img on="tap:AMP.setState({product: {selectedSlideForGreen: 1}})"
-                  src="/img/green_apple_2_60x40.jpg"
-                  width="60" height="40"
-                  [class]="product.selectedSlideForGreen == 1 ? 'selected' : '' "
-                  tabindex="1" role="button">
-        </amp-img>
-      </li>
-    </ul>
+    <div class="product-gallery gbcvs-c-productImageShelf">
+      <ul [hidden]="product.selectedColor != 'green'">
+        <li>
+          <amp-img on="tap:AMP.setState({product: {selectedSlideForGreen: 0}})" src="/img/green_apple_1_60x40.jpg" width="60" height="40" class="selected" [class]="product.selectedSlideForGreen == 0 ? 'selected' : '' " tabindex="0" role="button">
+          </amp-img>
+        </li>
+        <li>
+          <amp-img on="tap:AMP.setState({product: {selectedSlideForGreen: 1}})" src="/img/green_apple_2_60x40.jpg" width="60" height="40" [class]="product.selectedSlideForGreen == 1 ? 'selected' : '' " tabindex="1" role="button">
+          </amp-img>
+        </li>
+      </ul>
 
-    <ul hidden [hidden]="product.selectedColor != 'golden'">
-      <li>
-        <amp-img on="tap:AMP.setState({product: {selectedSlideForGolden: 0}})"
-                src="/img/product1_alt1_60x40.jpg"
-                 width="60" height="40"
-                 class="selected fadeIn"
-                 [class]="product.selectedSlideForGolden == 0 ? 'selected fadeIn' : '' "
-                 tabindex="0" role="button">
-        </amp-img>
-      </li>
-    </ul>
+      <ul hidden [hidden]="product.selectedColor != 'golden'">
+        <li>
+          <amp-img on="tap:AMP.setState({product: {selectedSlideForGolden: 0}})" src="/img/product1_alt1_60x40.jpg" width="60" height="40" class="selected fadeIn" [class]="product.selectedSlideForGolden == 0 ? 'selected fadeIn' : '' " tabindex="0" role="button">
+          </amp-img>
+        </li>
+      </ul>
 
-    <ul hidden [hidden]="product.selectedColor != 'red'">
-      <li>
-        <amp-img on="tap:AMP.setState({ product: {selectedSlideForRed : 0}})"
-                 src="/img/red_apple_1_60x40.jpg"
-                 width="60" height="40"
-                 class="selected fadeIn"
-                 [class]="product.selectedSlideForRed == 0 ? 'selected fadeIn' : '' "
-                 tabindex="0" role="button">
-        </amp-img>
-      </li>
-      <li>
-        <amp-img on="tap:AMP.setState({ product: {selectedSlideForRed : 1}})"
-                 src="/img/red_apple_2_60x46.jpg"
-                 width="60" height="40"
-                 [class]="product.selectedSlideForRed == 1 ? 'selected' : '' "
-                 tabindex="1" role="button">
-        </amp-img>
-      </li>
-    </ul>
-  </div>
-   <!-- ## Image Gallery -->
-  <!-- The `amp-carousel` component works very well for product image galleries. Learn how the `amp-carousel` component works [here](/advanced/image_galleries_with_amp-carousel/).
+      <ul hidden [hidden]="product.selectedColor != 'red'">
+        <li>
+          <amp-img on="tap:AMP.setState({ product: {selectedSlideForRed : 0}})" src="/img/red_apple_1_60x40.jpg" width="60" height="40" class="selected fadeIn" [class]="product.selectedSlideForRed == 0 ? 'selected fadeIn' : '' " tabindex="0" role="button">
+          </amp-img>
+        </li>
+        <li>
+          <amp-img on="tap:AMP.setState({ product: {selectedSlideForRed : 1}})" src="/img/red_apple_2_60x46.jpg" width="60" height="40" [class]="product.selectedSlideForRed == 1 ? 'selected' : '' " tabindex="1" role="button">
+          </amp-img>
+        </li>
+      </ul>
+    </div>
+    <!-- ## Image Gallery -->
+    <!-- The `amp-carousel` component works very well for product image galleries. Learn how the `amp-carousel` component works [here](/advanced/image_galleries_with_amp-carousel/).
 
   Notice how we are binding to the `slide` and `class` by using to the values of the variables `selectedSlideForGreen` and `selectedColor`. -->
-  <div class="product-gallery">
+    <div class="product-gallery">
 
-    <amp-carousel id="green-apple-carousel"
-            width="1024" height="682"
-            layout="responsive"
-            type="slides"
-            [slide]="product.selectedSlideForGreen"
-            on="slideChange: AMP.setState({product: {selectedSlideForGreen: event.index}})"
-            class="fadeIn"
-            [hidden]="product.selectedColor != 'green'">
-      <amp-img src="/img/green_apple_1_1024x682.jpg"
-                width="1024" height="682"
-                layout="responsive" on="tap:gallery-lightbox"
-                role="button" tabindex="0">
-      </amp-img>
-      <amp-img src="/img/green_apple_2_1024x685.jpg"
-                width="1024" height="682"
-                layout="responsive" on="tap:gallery-lightbox"
-                role="button" tabindex="0">
-      </amp-img>
-    </amp-carousel>
+      <amp-carousel id="green-apple-carousel" width="1024" height="682" layout="responsive" type="slides" [slide]="product.selectedSlideForGreen" on="slideChange: AMP.setState({product: {selectedSlideForGreen: event.index}})" class="fadeIn" [hidden]="product.selectedColor != 'green'">
+        <amp-img src="/img/green_apple_1_1024x682.jpg" width="1024" height="682" layout="responsive" on="tap:gallery-lightbox" role="button" tabindex="0">
+        </amp-img>
+        <amp-img src="/img/green_apple_2_1024x685.jpg" width="1024" height="682" layout="responsive" on="tap:gallery-lightbox" role="button" tabindex="0">
+        </amp-img>
+      </amp-carousel>
 
-    <amp-carousel id="golden-apple-carousel"
-            width="1024" height="682"
-            layout="responsive"
-            type="slides"
-            [slide]="product.selectedSlideForGolden"
-            on="slideChange: AMP.setState({product: {selectedSlideForGolden: event.index}})"
-            hidden
-            class="fadeIn"
-            [hidden]="product.selectedColor != 'golden'">
-        <amp-img src="/img/golden_apple1_1024x682.jpg"
-                width="1024" height="682"
-                layout="responsive" on="tap:gallery-lightbox"
-                role="button" tabindex="0">
+      <amp-carousel id="golden-apple-carousel" width="1024" height="682" layout="responsive" type="slides" [slide]="product.selectedSlideForGolden" on="slideChange: AMP.setState({product: {selectedSlideForGolden: event.index}})" hidden class="fadeIn" [hidden]="product.selectedColor != 'golden'">
+        <amp-img src="/img/golden_apple1_1024x682.jpg" width="1024" height="682" layout="responsive" on="tap:gallery-lightbox" role="button" tabindex="0">
         </amp-img>
-    </amp-carousel>
+      </amp-carousel>
 
-    <amp-carousel id="red-apple-carousel"
-            width="1024" height="682"
-            layout="responsive"
-            type="slides"
-            [slide]="product.selectedSlideForRed"
-            on="slideChange: AMP.setState({product: {selectedSlideForRed: event.index}})"
-            hidden
-            class="fadeIn"
-            [hidden]="product.selectedColor != 'red'">
-        <amp-img src="/img/red_apple_1_1024x682.jpg"
-                width="1024" height="682"
-                layout="responsive" on="tap:gallery-lightbox"
-                role="button" tabindex="0">
+      <amp-carousel id="red-apple-carousel" width="1024" height="682" layout="responsive" type="slides" [slide]="product.selectedSlideForRed" on="slideChange: AMP.setState({product: {selectedSlideForRed: event.index}})" hidden class="fadeIn" [hidden]="product.selectedColor != 'red'">
+        <amp-img src="/img/red_apple_1_1024x682.jpg" width="1024" height="682" layout="responsive" on="tap:gallery-lightbox" role="button" tabindex="0">
         </amp-img>
-        <amp-img src="/img/red_apple_2_1024x793.jpg"
-                width="1024" height="682"
-                layout="responsive" on="tap:gallery-lightbox"
-                role="button" tabindex="0">
+        <amp-img src="/img/red_apple_2_1024x793.jpg" width="1024" height="682" layout="responsive" on="tap:gallery-lightbox" role="button" tabindex="0">
         </amp-img>
-    </amp-carousel>
-    <!-- ## Full screen image -->
-    <!-- The `amp-image-lightbox` component allows the user to expand an image to fill the viewport.
+      </amp-carousel>
+      <!-- ## Full screen image -->
+      <!-- The `amp-image-lightbox` component allows the user to expand an image to fill the viewport.
     By clicking on each image from the product gallery, the user can see the product image by using the full screen.
     Learn more [here](/components/amp-image-lightbox/) -->
-    <amp-image-lightbox id="gallery-lightbox" layout="nodisplay">
-      <div on="tap:gallery-lightbox.close" role="button"
-          tabindex="0">
-          <button class="ampstart-btn caps m2 close-gallery-button" on="tap:gallery-lightbox.close"
-            role="button" tabindex="0">
+      <amp-image-lightbox id="gallery-lightbox" layout="nodisplay">
+        <div on="tap:gallery-lightbox.close" role="button" tabindex="0">
+          <button class="ampstart-btn caps m2 close-gallery-button" on="tap:gallery-lightbox.close" role="button" tabindex="0">
             Close
           </button>
-      </div>
-    </amp-image-lightbox>
+        </div>
+      </amp-image-lightbox>
 
-  </div>
-  <!-- ## Product Configuration -->
-  <!-- We use the `amp-state` component (part of [amp-bind](https://www.ampproject.org/docs/reference/components/amp-bind))
+    </div>
+    <!-- ## Product Configuration -->
+    <!-- We use the `amp-state` component (part of [amp-bind](https://www.ampproject.org/docs/reference/components/amp-bind))
       to configure the product price depending on the color and the size. We also configure the `defaultSize`
       for each product when you switch between colours and the size you previously selected is not available for the new color -->
-  <amp-state id="product">
-    <script type="application/json">
-    {
-      "selectedColor": "green",
-      "selectedSize": "S",
-      "selectedSlideForRed": 0,
-      "selectedSlideForGolden": 0,
-      "selectedSlideForGreen": 0,
-      "moreItemsPageIndex": 0,
-      "hasMorePages": true,
-      "green": {
-        "sizes": {
-          "S": "$5.99",
-          "M": "$5.99",
-          "L": "unavailable"
-        },
-        "defaultSize": "S"
-      },
-      "golden": {
-        "sizes": {
-          "S": "$9.99",
-          "M": "unavailable",
-          "L": "$9.99"
-        },
-        "defaultSize": "L"
-      },
-      "red": {
-        "sizes": {
-          "S": "$7.99",
-          "M": "$7.99",
-          "L": "$7.99"
-        },
-        "defaultSize": "M"
-      }
-    }
-    </script>
-  </amp-state>
+    <amp-state id="product">
+      <script type="application/json">
+        {
+          "selectedColor": "green",
+          "selectedSize": "S",
+          "selectedSlideForRed": 0,
+          "selectedSlideForGolden": 0,
+          "selectedSlideForGreen": 0,
+          "moreItemsPageIndex": 0,
+          "hasMorePages": true,
+          "green": {
+            "sizes": {
+              "S": "$5.99",
+              "M": "$5.99",
+              "L": "unavailable"
+            },
+            "defaultSize": "S"
+          },
+          "golden": {
+            "sizes": {
+              "S": "$9.99",
+              "M": "unavailable",
+              "L": "$9.99"
+            },
+            "defaultSize": "L"
+          },
+          "red": {
+            "sizes": {
+              "S": "$7.99",
+              "M": "$7.99",
+              "L": "$7.99"
+            },
+            "defaultSize": "M"
+          }
+        }
+      </script>
+    </amp-state>
 
     <!-- ## Product price -->
     <!-- We use [amp-bind](https://www.ampproject.org/docs/reference/components/amp-bind) to update the price of the product
@@ -688,9 +696,13 @@ This sample showcases how to build a product page in AMP HTML.
      We use `amp-selector` together with `amp-bind` to update the page for showing the price, the size availability, the gallery and preview of images.
     Every time you select a color, we call `AMP.setState` with `{selectedColor: event.targetOption}`. This is triggering
     all the attributes and elements binded to `selectedColor` to update: the price (binded with the attribute `[text]`), the gallery, the image preview and the size selector (all binded with `[class]`). -->
-      <p class="price-description">Price:
-        <span [text]="product[product.selectedColor].sizes[product.selectedSize]">$5.99</span>
-    </p>
+    <div class="shoppdp-c-productPricing">
+      <div class="shoppdp-c-productPricing__primaryDescGroup">
+        <p class="shoppdp-c-productPricing__actual">
+          <span [text]="product[product.selectedColor].sizes[product.selectedSize]">$5.99</span>
+        </p>
+      </div>
+    </div>
 
     <!-- ## Product page -->
     <!-- The add-to-cart action action is implemented using  [amp-form](/components/amp-form/). In our sample we use the [amp-selector](/components/amp-selector/) for selecting different product properties.
@@ -703,15 +715,24 @@ This sample showcases how to build a product page in AMP HTML.
 
     <!-- We use the `CLIENT_ID` variable to identify the user, this enables storing a shopping cart between repeated visits of an AMP page (either via the AMP Cache or the original host). This variable can be used inside an amp-form by declaring an hidden input value with `default-value="CLIENT_ID(cart)`. Read more about variable substitution [here](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md). -->
 
-      <form id="order" method="POST"
-            action-xhr="/samples_templates/product_page/add_to_cart"
-            target="_top" class="flex flex-wrap m1">
-        <div class="items-center flex">
-          <label for="color">Color:</label>
-          <amp-selector name="color"
-                  layout="container"
-                  [selected]="product.selectedColor"
-                  on="select:AMP.setState({
+    <div class="shoppdp-l__sidebar">
+      <pdp-product-two-day-shipping two-day-shipping-available="true" class="gb-ui">
+        <div class="shoppdp-c-shipping">
+          <p class="shoppdp-c-shipping__heading">Eligible for 2-day shipping.</p>
+          <p class="shoppdp-c-shipping__desc">Expected delivery in 1-2 business days.</p>
+          <cvsui-button-text custom-css="shoppdp-c-shipping__detailsBtn" size="SM" styles="secondaryAlt" weight="normal" label="Details" class="gb-ui">
+            <button class="cvsui-c-buttonText shoppdp-c-shipping__detailsBtn cvsui-c-buttonText--secondaryAlt cvsui-c-buttonText--sm cvsui-c-buttonText--fwNormal  " target="_self" role="undefined">
+              Details
+            </button>
+          </cvsui-button-text>
+        </div>
+      </pdp-product-two-day-shipping>
+    </div>
+
+    <form id="order" method="POST" action-xhr="/samples_templates/product_page/add_to_cart" target="_top" class="flex flex-wrap m1">
+      <div class="items-center flex">
+        <label for="color">Color:</label>
+        <amp-selector name="color" layout="container" [selected]="product.selectedColor" on="select:AMP.setState({
                     product: {
                       selectedColor: event.targetOption,
                       selectedSlideForRed: 0,
@@ -720,106 +741,87 @@ This sample showcases how to build a product page in AMP HTML.
                       selectedSize: product[event.targetOption].sizes[product.selectedSize] != 'unavailable' ? product.selectedSize : product[event.targetOption].defaultSize
                     }
                   })">
-            <ul class="p0 m1">
-              <li>
-                <div option="green" selected class="square green"></div>
-              </li>
-              <li>
-                <div option="golden" class="square golden"></div>
-              </li>
-              <li>
-                <div option="red" class="square red"></div>
-              </li>
-            </ul>
-          </amp-selector>
-        </div>
-        <div class="items-center flex">
-          <label for="quantity">Quantity:</label>
-          <amp-selector name="quantity" layout="container">
-            <ul class="p0 m1">
-              <li option="1" selected>1</li>
-              <li option="2">2</li>
-              <li option="3">3</li>
-            </ul>
-          </amp-selector>
-        </div>
-        <div class="items-center flex">
-          <label for="size">Size:</label>
-          <amp-selector name="size" layout="container"
-                  on="select:AMP.setState({ product: {selectedSize: event.targetOption}})"
-                  [selected]="(product[product.selectedColor].sizes[product.selectedSize] != 'unavailable')
+          <ul class="p0 m1">
+            <li>
+              <div option="green" selected class="square green"></div>
+            </li>
+            <li>
+              <div option="golden" class="square golden"></div>
+            </li>
+            <li>
+              <div option="red" class="square red"></div>
+            </li>
+          </ul>
+        </amp-selector>
+      </div>
+      <div class="items-center flex">
+        <label for="quantity">Quantity:</label>
+        <amp-selector name="quantity" layout="container">
+          <ul class="p0 m1">
+            <li option="1" selected>1</li>
+            <li option="2">2</li>
+            <li option="3">3</li>
+          </ul>
+        </amp-selector>
+      </div>
+      <div class="items-center flex">
+        <label for="size">Size:</label>
+        <amp-selector name="size" layout="container" on="select:AMP.setState({ product: {selectedSize: event.targetOption}})" [selected]="(product[product.selectedColor].sizes[product.selectedSize] != 'unavailable')
                       ? product.selectedSize
                       : product[product.selectedColor].defaultSize">
-            <ul class="p0 m1">
-              <li option="S" class=""
-                  [class]="(product[product.selectedColor].sizes['S'] != 'unavailable')
+          <ul class="p0 m1">
+            <li option="S" class="" [class]="(product[product.selectedColor].sizes['S'] != 'unavailable')
                       ? ''
                       : 'unavailable'">S</li>
-              <li option="M" class="" selected
-                  [class]="(product[product.selectedColor].sizes['M'] != 'unavailable')
+            <li option="M" class="" selected [class]="(product[product.selectedColor].sizes['M'] != 'unavailable')
                       ? ''
                       : 'unavailable'">M</li>
-              <li option="L" class="unavailable"
-                  [class]="(product[product.selectedColor].sizes['L'] != 'unavailable')
+            <li option="L" class="unavailable" [class]="(product[product.selectedColor].sizes['L'] != 'unavailable')
                       ? ''
                       : 'unavailable'">L</li>
-            </ul>
-          </amp-selector>
-        </div>
-        <div class="items-center flex my1">
-          <input type="submit" class="ampstart-btn caps" name="add-to-cart" value="add to cart">
-        </div>
-        <input type="hidden" name="name" value="Apple">
-        <input type="hidden" name="price" value="$1.99">
-        <input name="clientId" type="hidden" value="CLIENT_ID(cart)" data-amp-replace="CLIENT_ID">
-        <div submit-error>
-          <template type="amp-mustache">
-            Error! Looks like something went wrong with your shopping cart, please try to add an item again. {{error}}
-          </template>
-        </div>
-      </form>
+          </ul>
+        </amp-selector>
+      </div>
+      <div class="items-center flex my1">
+        <input type="submit" class="ampstart-btn caps" name="add-to-cart" value="add to cart">
+      </div>
+      <input type="hidden" name="name" value="Apple">
+      <input type="hidden" name="price" value="$1.99">
+      <input name="clientId" type="hidden" value="CLIENT_ID(cart)" data-amp-replace="CLIENT_ID">
+      <div submit-error>
+        <template type="amp-mustache">
+          Error! Looks like something went wrong with your shopping cart, please try to add an item again. {{error}}
+        </template>
+      </div>
+    </form>
 
     <!-- ## Tab panels -->
     <!-- Use `amp-selector` styled as tab panels to add additional data about your product.
     Learn how to implement tabs in AMP [here](/advanced/tab_panels_with_amp-selector/preview/). -->
-  <amp-selector role="tablist"
-  layout="container"
-  class="ampTabContainer ampstart-headerbar-nav" keyboard-select-mode="select">
-  <div role="tab"
-    class="tabButton h4 ampstart-nav-item"
-    selected
-    option="a">ABOUT</div>
-  <div role="tabpanel"
-      class="tabContent p1 p">Fruit is rich in vitamins and minerals. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-  <div role="tab"
-    class="tabButton h4 ampstart-nav-item"
-    option="b">SPECS</div>
-  <div role="tabpanel"
-    class="tabContent p1 p">Always wash fruit before eating. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-  <div role="tab"
-      class="tabButton h4 ampstart-nav-item"
-      option="c">SIZE</div>
-  <div role="tabpanel"
-      class="tabContent p1 p">Size may vary. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
-</amp-selector>
+    <amp-selector role="tablist" layout="container" class="ampTabContainer ampstart-headerbar-nav" keyboard-select-mode="select">
+      <div role="tab" class="tabButton h4 ampstart-nav-item" selected option="a">ABOUT</div>
+      <div role="tabpanel" class="tabContent p1 p">Fruit is rich in vitamins and minerals. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+      <div role="tab" class="tabButton h4 ampstart-nav-item" option="b">SPECS</div>
+      <div role="tabpanel" class="tabContent p1 p">Always wash fruit before eating. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+      <div role="tab" class="tabButton h4 ampstart-nav-item" option="c">SIZE</div>
+      <div role="tabpanel" class="tabContent p1 p">Size may vary. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+    </amp-selector>
 
     <!-- ## Dynamic Related Product Lists -->
     <!--  -->
     <div class="items-center flex">
       <h2 id="related-products" class="m1 inline-block">Related products
-      <amp-lightbox id="my-lightbox" layout="nodisplay">
-        <div class="lightbox" on="tap:my-lightbox.close" role="button"
-            tabindex="0">
-          <div class="info">
-            <h4 class="p2">Products that have been bought together</h4>
-            <button class="ampstart-btn caps mx2 mb2" on="tap:my-lightbox.close"
-              role="button" tabindex="0">
-              Close
-            </button>
-        </div>
-        </div>
-      </amp-lightbox>
-    </h2>
+        <amp-lightbox id="my-lightbox" layout="nodisplay">
+          <div class="lightbox" on="tap:my-lightbox.close" role="button" tabindex="0">
+            <div class="info">
+              <h4 class="p2">Products that have been bought together</h4>
+              <button class="ampstart-btn caps mx2 mb2" on="tap:my-lightbox.close" role="button" tabindex="0">
+                Close
+              </button>
+            </div>
+          </div>
+        </amp-lightbox>
+      </h2>
       <button class="info-button border-none mr1" on="tap:my-lightbox" role="button" tabindex="0">
       </button>
     </div>
@@ -827,24 +829,13 @@ This sample showcases how to build a product page in AMP HTML.
     With AMP, you can easily pull in different latest offers or highlights without changing the page. To do so, just use `amp-list` to fire a CORS request to a JSON endpoint which supplies the list of related products. These are populated into an amp-mustache template on the client.
     Learn more about `amp-list` [here](/components/amp-list/).
     -->
-    <amp-list class="items m1"
-              width="auto"
-              height="145"
-              layout="fixed-height"
-              src="https://b46a02bc.ngrok.io/product/1990031"
-              [src]="myState.items"
-              id="show-more-list">
+    <amp-list class="items m1" width="auto" height="145" layout="fixed-height" src="https://b46a02bc.ngrok.io/product/1990031" [src]="myState.items" id="show-more-list">
       <template type="amp-mustache">
-        <a class="text-decoration-none p1"
-          href="/samples_templates/product_page/preview/">
-          <amp-img width="70.31"
-                   height="46.8"
-                   layout="fixed"
-                   alt="{{name}}"
-                   src="{{img}}"></amp-img>
-                 <p class="name">{{name}}</p>
-                 <p class="star">{{{stars}}}</p>
-                 <p class="price">${{price}}</p>
+        <a class="text-decoration-none p1" href="/samples_templates/product_page/preview/">
+          <amp-img width="70.31" height="46.8" layout="fixed" alt="{{name}}" src="{{img}}"></amp-img>
+          <p class="name">{{name}}</p>
+          <p class="star">{{{stars}}}</p>
+          <p class="price">${{price}}</p>
         </a>
       </template>
     </amp-list>
@@ -861,43 +852,39 @@ This sample showcases how to build a product page in AMP HTML.
     You can show or hide a Show more button by using `amp-form` and the `submit-success` event: notice
     how we set the `hasMorePages` variable to false based on the server response.
     -->
-    <form method="GET"
-        action="/json/more_related_products_page"
-        action-xhr="/json/more_related_products_page"
-        target="_top"
-        on="submit-success: AMP.setState({
+    <form method="GET" action="/json/more_related_products_page" action-xhr="/json/more_related_products_page" target="_top" on="submit-success: AMP.setState({
           myState: { items: myState.items.concat(event.response.items)},
           product: {moreItemsPageIndex: product.moreItemsPageIndex + 1,
                     hasMorePages: event.response.hasMorePages}
         });">
       <input type="hidden" name="moreItemsPageIndex" value="0" [value]="product.moreItemsPageIndex">
-      <input type="submit" value="Show more"
-        class="ampstart-btn caps m1 mb3"
-        [hidden] = "!product.hasMorePages">
-  </form>
-  <!--
+      <input type="submit" value="Show more" class="ampstart-btn caps m1 mb3" [hidden]="!product.hasMorePages">
+    </form>
+    <!--
     ## User Analytics
   -->
-  <!--
+    <!--
     Analytics must be configured in the body. Here we use Google Analytics to track pageviews.
   -->
-  <amp-analytics type="googleanalytics">
-    <script type="application/json">
+    <amp-analytics type="googleanalytics">
+      <script type="application/json">
         {
           "vars": {
-              "account": "UA-73836974-1"
+            "account": "UA-73836974-1"
           },
           "triggers": {
-              "default pageview": {
-                  "on": "visible",
-                  "request": "pageview",
-                  "vars": {
-                      "title": "Product"
-                  }
+            "default pageview": {
+              "on": "visible",
+              "request": "pageview",
+              "vars": {
+                "title": "Product"
               }
+            }
           }
-      }
-    </script>
-  </amp-analytics>
-    </body>
+        }
+      </script>
+    </amp-analytics>
+  </div>
+</body>
+
 </html>
