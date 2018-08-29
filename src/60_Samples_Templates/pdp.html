@@ -370,7 +370,7 @@ This sample showcases how to build a product page in AMP HTML.
     /* ==========================================================================
        Page Header
        ========================================================================== */
-    
+
        .gbcvs-c-pageHd {
       padding: 16px 0;
       background-color: #fff; }
@@ -411,7 +411,7 @@ This sample showcases how to build a product page in AMP HTML.
   /* ==========================================================================
      Product Pricing
      ========================================================================== */
-  
+
     .shoppdp-c-productPricing__promotion,
     .shoppdp-c-productPricing__promoLabel {
       font-size: 14px;
@@ -488,11 +488,11 @@ This sample showcases how to build a product page in AMP HTML.
       padding-right: 16px;
     }
 
-  
+
   /* ==========================================================================
      Sidebar
      ========================================================================== */
-  
+
      .shoppdp-l__sidebar {
   padding: 24px 16px;
   background: #f2f2f2; }
@@ -512,7 +512,62 @@ This sample showcases how to build a product page in AMP HTML.
 .shoppdp-c-shipping__heading {
   font-weight: bold; }
 
+  /* ==========================================================================
+     YMAL Tiles
+     ========================================================================== */
+  .tile {
 
+  }
+
+  .tile--ymal p {
+      font-size: 12px;
+      padding-left: 0;
+      padding-right: 0;
+  }
+
+  .tile--ymal button {
+    width: 100%;
+    color: #fff;
+    background: #c00;
+    padding: 12px 6px;
+    border: 0;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 14px;
+  }
+
+  .tile--ymal .price {
+      color: #c00;
+      font-size: 18px;
+      font-weight: bold;
+      line-height: 1;
+      margin: 0;
+  }
+
+  .tile--ymal .unit-price {
+    color: #767676;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 1;
+    margin: 3px 0 0;
+  }
+
+  .tile--ymal .promo {
+    font-weight: bold;
+  }
+
+  .tile--ymal .name {
+    color: #000;
+    margin: 6px 0;
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  .tile--ymal .rating {
+      width: 100%;
+      height: 20px;
+      background: #efefef;
+  }
   </style>
 
   <!-- ## Metadata -->
@@ -815,7 +870,8 @@ This sample showcases how to build a product page in AMP HTML.
     <!-- ## Dynamic Related Product Lists -->
     <!--  -->
     <div class="items-center flex">
-      <h2 id="related-products" class="m1 inline-block">Related products
+      <h2 id="related-products" class="m1 inline-block">
+        You May Also Like
         <amp-lightbox id="my-lightbox" layout="nodisplay">
           <div class="lightbox" on="tap:my-lightbox.close" role="button" tabindex="0">
             <div class="info">
@@ -834,13 +890,34 @@ This sample showcases how to build a product page in AMP HTML.
     With AMP, you can easily pull in different latest offers or highlights without changing the page. To do so, just use `amp-list` to fire a CORS request to a JSON endpoint which supplies the list of related products. These are populated into an amp-mustache template on the client.
     Learn more about `amp-list` [here](/components/amp-list/).
     -->
-    <amp-list class="items m1" width="auto" height="145" layout="fixed-height" src="https://b46a02bc.ngrok.io/product/1990031" [src]="myState.items" id="show-more-list">
+    <amp-list
+        class="items m1"
+        width="auto"
+        height="350"
+        layout="fixed-height"
+        src="https://b46a02bc.ngrok.io/ymal/1990031"
+        [src]="myState.items"
+        id="show-more-list"
+    >
       <template type="amp-mustache">
-        <a class="text-decoration-none p1" href="/samples_templates/product_page/preview/">
-          <amp-img width="70.31" height="46.8" layout="fixed" alt="{{name}}" src="{{img}}"></amp-img>
+        <a
+            class="tile tile--ymal"
+            href="/samples_templates/product_page/preview/"
+        >
+          <amp-img
+            width="100"
+            height="100"
+            layout="fixed"
+            alt="{{name}}"
+            src="{{img}}"
+          ></amp-img>
+          <button>Add To Basket</button>
+          <!-- // TODO: Pull in data from feed. -->
+          <p class="price">Price</p>
+          <p class="unit-price">(Unit Price)</p>
+          <p class="promo">Promo Message</p>
           <p class="name">{{name}}</p>
-          <p class="star">{{{stars}}}</p>
-          <p class="price">${{price}}</p>
+          <p class="rating"><!-- // TODO --></p>
         </a>
       </template>
     </amp-list>
