@@ -290,7 +290,7 @@ This sample showcases how to build a product page in AMP HTML.
     }
 
     /* ==========================================================================
-       CVS Styles
+       CVSUI - Global
        ========================================================================== */
 
     body {
@@ -353,6 +353,298 @@ This sample showcases how to build a product page in AMP HTML.
 
 
     /* ==========================================================================
+       CVSUI - Button Text
+       ========================================================================== */
+    
+       .cvsui-c-buttonText {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  min-height: 24px;
+  padding: 3px 0;
+  margin: 0;
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: bold;
+  text-align: left;
+  text-decoration: none;
+  color: #767676;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  cursor: pointer; }
+  .cvsui-c-buttonText::before {
+    position: absolute;
+    content: "";
+    top: -6px;
+    bottom: -6px;
+    left: 0;
+    right: 0; }
+  .cvsui-c-buttonText, .cvsui-c-buttonText:visited, .cvsui-c-buttonText:focus, .cvsui-c-buttonText:hover, .cvsui-c-buttonText:active {
+    text-decoration: underline; }
+  .cvsui-c-buttonText:visited, .cvsui-c-buttonText.cvsui-is-visited {
+    color: #767676; }
+    .cvsui-c-buttonText:visited .cvsui-c-buttonText__icon, .cvsui-c-buttonText.cvsui-is-visited .cvsui-c-buttonText__icon {
+      fill: #767676; }
+  .cvsui-c-buttonText:focus, .cvsui-c-buttonText.cvsui-is-focus {
+    outline: 1px dotted #000;
+    outline-offset: 2px; }
+  .cvsui-c-buttonText--primaryIcon, .cvsui-c-buttonText--secondaryIcon, .cvsui-c-buttonText--secondaryAltIcon, .cvsui-c-buttonText--tertiaryIcon, .cvsui-c-buttonText--errorIcon, .cvsui-c-buttonText--infoIcon, .cvsui-c-buttonText--successIcon, .cvsui-c-buttonText--warningIcon {
+    padding-top: 0;
+    padding-bottom: 0; }
+  .cvsui-c-buttonText--primaryBadge, .cvsui-c-buttonText--secondaryBadge, .cvsui-c-buttonText--secondaryAltBadge, .cvsui-c-buttonText--tertiaryBadge, .cvsui-c-buttonText--errorBadge, .cvsui-c-buttonText--infoBadge, .cvsui-c-buttonText--successBadge, .cvsui-c-buttonText--warningBadge {
+    padding-top: 2px;
+    padding-bottom: 2px; }
+
+.cvsui-c-buttonText__icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  fill: #767676; }
+  .cvsui-c-buttonText__icon--left {
+    margin-right: 4px; }
+  .cvsui-c-buttonText__icon--right {
+    margin-left: 4px; }
+
+.cvsui-c-buttonText__badge {
+  margin: 0 0 0 6px; }
+
+.cvsui-c-buttonText--primary, .cvsui-c-buttonText--primaryIcon, .cvsui-c-buttonText--primaryBadge {
+  color: #cc0000; }
+  .cvsui-c-buttonText--primary:visited, .cvsui-c-buttonText--primary.cvsui-is-visited, .cvsui-c-buttonText--primaryIcon:visited, .cvsui-c-buttonText--primaryIcon.cvsui-is-visited, .cvsui-c-buttonText--primaryBadge:visited, .cvsui-c-buttonText--primaryBadge.cvsui-is-visited {
+    color: #cc0000; }
+  .cvsui-c-buttonText--primary:focus, .cvsui-c-buttonText--primary.cvsui-is-focus, .cvsui-c-buttonText--primaryIcon:focus, .cvsui-c-buttonText--primaryIcon.cvsui-is-focus, .cvsui-c-buttonText--primaryBadge:focus, .cvsui-c-buttonText--primaryBadge.cvsui-is-focus {
+    color: #eb0000; }
+  .cvsui-c-buttonText--primary:hover, .cvsui-c-buttonText--primary.cvsui-is-hover, .cvsui-c-buttonText--primaryIcon:hover, .cvsui-c-buttonText--primaryIcon.cvsui-is-hover, .cvsui-c-buttonText--primaryBadge:hover, .cvsui-c-buttonText--primaryBadge.cvsui-is-hover {
+    color: #eb0000; }
+  .cvsui-c-buttonText--primary:active, .cvsui-c-buttonText--primary.cvsui-is-active, .cvsui-c-buttonText--primaryIcon:active, .cvsui-c-buttonText--primaryIcon.cvsui-is-active, .cvsui-c-buttonText--primaryBadge:active, .cvsui-c-buttonText--primaryBadge.cvsui-is-active {
+    color: #a50000; }
+  .cvsui-c-buttonText--primary[disabled], .cvsui-c-buttonText--primary.cvsui-is-disabled, .cvsui-c-buttonText--primaryIcon[disabled], .cvsui-c-buttonText--primaryIcon.cvsui-is-disabled, .cvsui-c-buttonText--primaryBadge[disabled], .cvsui-c-buttonText--primaryBadge.cvsui-is-disabled {
+    color: #767676;
+    cursor: not-allowed; }
+    .cvsui-c-buttonText--primary[disabled] .cvsui-c-buttonText__icon, .cvsui-c-buttonText--primary.cvsui-is-disabled .cvsui-c-buttonText__icon, .cvsui-c-buttonText--primaryIcon[disabled] .cvsui-c-buttonText__icon, .cvsui-c-buttonText--primaryIcon.cvsui-is-disabled .cvsui-c-buttonText__icon, .cvsui-c-buttonText--primaryBadge[disabled] .cvsui-c-buttonText__icon, .cvsui-c-buttonText--primaryBadge.cvsui-is-disabled .cvsui-c-buttonText__icon {
+      fill: #767676; }
+  .cvsui-c-buttonText--primary .cvsui-c-buttonText__icon, .cvsui-c-buttonText--primaryIcon .cvsui-c-buttonText__icon, .cvsui-c-buttonText--primaryBadge .cvsui-c-buttonText__icon {
+    fill: currentColor; }
+
+.cvsui-c-buttonText--primaryIcon, .cvsui-c-buttonText--primaryIcon:visited, .cvsui-c-buttonText--primaryIcon:focus, .cvsui-c-buttonText--primaryIcon:hover, .cvsui-c-buttonText--primaryIcon:active {
+  text-decoration: none; }
+
+.cvsui-c-buttonText--secondary, .cvsui-c-buttonText--secondaryIcon, .cvsui-c-buttonText--secondaryBadge {
+  color: #000; }
+  .cvsui-c-buttonText--secondary:visited, .cvsui-c-buttonText--secondary.cvsui-is-visited, .cvsui-c-buttonText--secondaryIcon:visited, .cvsui-c-buttonText--secondaryIcon.cvsui-is-visited, .cvsui-c-buttonText--secondaryBadge:visited, .cvsui-c-buttonText--secondaryBadge.cvsui-is-visited {
+    color: #000; }
+  .cvsui-c-buttonText--secondary:focus, .cvsui-c-buttonText--secondary.cvsui-is-focus, .cvsui-c-buttonText--secondaryIcon:focus, .cvsui-c-buttonText--secondaryIcon.cvsui-is-focus, .cvsui-c-buttonText--secondaryBadge:focus, .cvsui-c-buttonText--secondaryBadge.cvsui-is-focus {
+    color: #646464; }
+  .cvsui-c-buttonText--secondary:hover, .cvsui-c-buttonText--secondary.cvsui-is-hover, .cvsui-c-buttonText--secondaryIcon:hover, .cvsui-c-buttonText--secondaryIcon.cvsui-is-hover, .cvsui-c-buttonText--secondaryBadge:hover, .cvsui-c-buttonText--secondaryBadge.cvsui-is-hover {
+    color: #646464; }
+  .cvsui-c-buttonText--secondary:active, .cvsui-c-buttonText--secondary.cvsui-is-active, .cvsui-c-buttonText--secondaryIcon:active, .cvsui-c-buttonText--secondaryIcon.cvsui-is-active, .cvsui-c-buttonText--secondaryBadge:active, .cvsui-c-buttonText--secondaryBadge.cvsui-is-active {
+    color: #a50000; }
+  .cvsui-c-buttonText--secondary[disabled], .cvsui-c-buttonText--secondary.cvsui-is-disabled, .cvsui-c-buttonText--secondaryIcon[disabled], .cvsui-c-buttonText--secondaryIcon.cvsui-is-disabled, .cvsui-c-buttonText--secondaryBadge[disabled], .cvsui-c-buttonText--secondaryBadge.cvsui-is-disabled {
+    color: #767676;
+    cursor: not-allowed; }
+    .cvsui-c-buttonText--secondary[disabled] .cvsui-c-buttonText__icon, .cvsui-c-buttonText--secondary.cvsui-is-disabled .cvsui-c-buttonText__icon, .cvsui-c-buttonText--secondaryIcon[disabled] .cvsui-c-buttonText__icon, .cvsui-c-buttonText--secondaryIcon.cvsui-is-disabled .cvsui-c-buttonText__icon, .cvsui-c-buttonText--secondaryBadge[disabled] .cvsui-c-buttonText__icon, .cvsui-c-buttonText--secondaryBadge.cvsui-is-disabled .cvsui-c-buttonText__icon {
+      fill: #767676; }
+  .cvsui-c-buttonText--secondary .cvsui-c-buttonText__icon, .cvsui-c-buttonText--secondaryIcon .cvsui-c-buttonText__icon, .cvsui-c-buttonText--secondaryBadge .cvsui-c-buttonText__icon {
+    fill: currentColor; }
+
+.cvsui-c-buttonText--secondaryIcon, .cvsui-c-buttonText--secondaryIcon:visited, .cvsui-c-buttonText--secondaryIcon:focus, .cvsui-c-buttonText--secondaryIcon:hover, .cvsui-c-buttonText--secondaryIcon:active {
+  text-decoration: none; }
+
+.cvsui-c-buttonText--secondaryAlt, .cvsui-c-buttonText--secondaryAltIcon, .cvsui-c-buttonText--secondaryAltBadge {
+  color: #333; }
+  .cvsui-c-buttonText--secondaryAlt:visited, .cvsui-c-buttonText--secondaryAlt.cvsui-is-visited, .cvsui-c-buttonText--secondaryAltIcon:visited, .cvsui-c-buttonText--secondaryAltIcon.cvsui-is-visited, .cvsui-c-buttonText--secondaryAltBadge:visited, .cvsui-c-buttonText--secondaryAltBadge.cvsui-is-visited {
+    color: #333; }
+  .cvsui-c-buttonText--secondaryAlt:focus, .cvsui-c-buttonText--secondaryAlt.cvsui-is-focus, .cvsui-c-buttonText--secondaryAltIcon:focus, .cvsui-c-buttonText--secondaryAltIcon.cvsui-is-focus, .cvsui-c-buttonText--secondaryAltBadge:focus, .cvsui-c-buttonText--secondaryAltBadge.cvsui-is-focus {
+    color: #646464; }
+  .cvsui-c-buttonText--secondaryAlt:hover, .cvsui-c-buttonText--secondaryAlt.cvsui-is-hover, .cvsui-c-buttonText--secondaryAltIcon:hover, .cvsui-c-buttonText--secondaryAltIcon.cvsui-is-hover, .cvsui-c-buttonText--secondaryAltBadge:hover, .cvsui-c-buttonText--secondaryAltBadge.cvsui-is-hover {
+    color: #646464; }
+  .cvsui-c-buttonText--secondaryAlt:active, .cvsui-c-buttonText--secondaryAlt.cvsui-is-active, .cvsui-c-buttonText--secondaryAltIcon:active, .cvsui-c-buttonText--secondaryAltIcon.cvsui-is-active, .cvsui-c-buttonText--secondaryAltBadge:active, .cvsui-c-buttonText--secondaryAltBadge.cvsui-is-active {
+    color: #a50000; }
+  .cvsui-c-buttonText--secondaryAlt[disabled], .cvsui-c-buttonText--secondaryAlt.cvsui-is-disabled, .cvsui-c-buttonText--secondaryAltIcon[disabled], .cvsui-c-buttonText--secondaryAltIcon.cvsui-is-disabled, .cvsui-c-buttonText--secondaryAltBadge[disabled], .cvsui-c-buttonText--secondaryAltBadge.cvsui-is-disabled {
+    color: #767676;
+    cursor: not-allowed; }
+    .cvsui-c-buttonText--secondaryAlt[disabled] .cvsui-c-buttonText__icon, .cvsui-c-buttonText--secondaryAlt.cvsui-is-disabled .cvsui-c-buttonText__icon, .cvsui-c-buttonText--secondaryAltIcon[disabled] .cvsui-c-buttonText__icon, .cvsui-c-buttonText--secondaryAltIcon.cvsui-is-disabled .cvsui-c-buttonText__icon, .cvsui-c-buttonText--secondaryAltBadge[disabled] .cvsui-c-buttonText__icon, .cvsui-c-buttonText--secondaryAltBadge.cvsui-is-disabled .cvsui-c-buttonText__icon {
+      fill: #767676; }
+  .cvsui-c-buttonText--secondaryAlt .cvsui-c-buttonText__icon, .cvsui-c-buttonText--secondaryAltIcon .cvsui-c-buttonText__icon, .cvsui-c-buttonText--secondaryAltBadge .cvsui-c-buttonText__icon {
+    fill: currentColor; }
+
+.cvsui-c-buttonText--secondaryAltIcon, .cvsui-c-buttonText--secondaryAltIcon:visited, .cvsui-c-buttonText--secondaryAltIcon:focus, .cvsui-c-buttonText--secondaryAltIcon:hover, .cvsui-c-buttonText--secondaryAltIcon:active {
+  text-decoration: none; }
+
+.cvsui-c-buttonText--tertiary, .cvsui-c-buttonText--tertiaryIcon, .cvsui-c-buttonText--tertiaryBadge {
+  color: #646464; }
+  .cvsui-c-buttonText--tertiary:visited, .cvsui-c-buttonText--tertiary.cvsui-is-visited, .cvsui-c-buttonText--tertiaryIcon:visited, .cvsui-c-buttonText--tertiaryIcon.cvsui-is-visited, .cvsui-c-buttonText--tertiaryBadge:visited, .cvsui-c-buttonText--tertiaryBadge.cvsui-is-visited {
+    color: #646464; }
+  .cvsui-c-buttonText--tertiary:focus, .cvsui-c-buttonText--tertiary.cvsui-is-focus, .cvsui-c-buttonText--tertiaryIcon:focus, .cvsui-c-buttonText--tertiaryIcon.cvsui-is-focus, .cvsui-c-buttonText--tertiaryBadge:focus, .cvsui-c-buttonText--tertiaryBadge.cvsui-is-focus {
+    color: #000; }
+  .cvsui-c-buttonText--tertiary:hover, .cvsui-c-buttonText--tertiary.cvsui-is-hover, .cvsui-c-buttonText--tertiaryIcon:hover, .cvsui-c-buttonText--tertiaryIcon.cvsui-is-hover, .cvsui-c-buttonText--tertiaryBadge:hover, .cvsui-c-buttonText--tertiaryBadge.cvsui-is-hover {
+    color: #000; }
+  .cvsui-c-buttonText--tertiary:active, .cvsui-c-buttonText--tertiary.cvsui-is-active, .cvsui-c-buttonText--tertiaryIcon:active, .cvsui-c-buttonText--tertiaryIcon.cvsui-is-active, .cvsui-c-buttonText--tertiaryBadge:active, .cvsui-c-buttonText--tertiaryBadge.cvsui-is-active {
+    color: #a50000; }
+  .cvsui-c-buttonText--tertiary[disabled], .cvsui-c-buttonText--tertiary.cvsui-is-disabled, .cvsui-c-buttonText--tertiaryIcon[disabled], .cvsui-c-buttonText--tertiaryIcon.cvsui-is-disabled, .cvsui-c-buttonText--tertiaryBadge[disabled], .cvsui-c-buttonText--tertiaryBadge.cvsui-is-disabled {
+    color: #767676;
+    cursor: not-allowed; }
+    .cvsui-c-buttonText--tertiary[disabled] .cvsui-c-buttonText__icon, .cvsui-c-buttonText--tertiary.cvsui-is-disabled .cvsui-c-buttonText__icon, .cvsui-c-buttonText--tertiaryIcon[disabled] .cvsui-c-buttonText__icon, .cvsui-c-buttonText--tertiaryIcon.cvsui-is-disabled .cvsui-c-buttonText__icon, .cvsui-c-buttonText--tertiaryBadge[disabled] .cvsui-c-buttonText__icon, .cvsui-c-buttonText--tertiaryBadge.cvsui-is-disabled .cvsui-c-buttonText__icon {
+      fill: #767676; }
+  .cvsui-c-buttonText--tertiary .cvsui-c-buttonText__icon, .cvsui-c-buttonText--tertiaryIcon .cvsui-c-buttonText__icon, .cvsui-c-buttonText--tertiaryBadge .cvsui-c-buttonText__icon {
+    fill: currentColor; }
+
+.cvsui-c-buttonText--tertiaryIcon, .cvsui-c-buttonText--tertiaryIcon:visited, .cvsui-c-buttonText--tertiaryIcon:focus, .cvsui-c-buttonText--tertiaryIcon:hover, .cvsui-c-buttonText--tertiaryIcon:active {
+  text-decoration: none; }
+
+.cvsui-c-buttonText--error, .cvsui-c-buttonText--errorIcon, .cvsui-c-buttonText--errorBadge {
+  color: #cc0000; }
+  .cvsui-c-buttonText--error:visited, .cvsui-c-buttonText--error.cvsui-is-visited, .cvsui-c-buttonText--errorIcon:visited, .cvsui-c-buttonText--errorIcon.cvsui-is-visited, .cvsui-c-buttonText--errorBadge:visited, .cvsui-c-buttonText--errorBadge.cvsui-is-visited {
+    color: #cc0000; }
+  .cvsui-c-buttonText--error:focus, .cvsui-c-buttonText--error.cvsui-is-focus, .cvsui-c-buttonText--errorIcon:focus, .cvsui-c-buttonText--errorIcon.cvsui-is-focus, .cvsui-c-buttonText--errorBadge:focus, .cvsui-c-buttonText--errorBadge.cvsui-is-focus {
+    color: #cc0000; }
+  .cvsui-c-buttonText--error:hover, .cvsui-c-buttonText--error.cvsui-is-hover, .cvsui-c-buttonText--errorIcon:hover, .cvsui-c-buttonText--errorIcon.cvsui-is-hover, .cvsui-c-buttonText--errorBadge:hover, .cvsui-c-buttonText--errorBadge.cvsui-is-hover {
+    color: #a50000; }
+  .cvsui-c-buttonText--error:active, .cvsui-c-buttonText--error.cvsui-is-active, .cvsui-c-buttonText--errorIcon:active, .cvsui-c-buttonText--errorIcon.cvsui-is-active, .cvsui-c-buttonText--errorBadge:active, .cvsui-c-buttonText--errorBadge.cvsui-is-active {
+    color: #5e0000; }
+  .cvsui-c-buttonText--error[disabled], .cvsui-c-buttonText--error.cvsui-is-disabled, .cvsui-c-buttonText--errorIcon[disabled], .cvsui-c-buttonText--errorIcon.cvsui-is-disabled, .cvsui-c-buttonText--errorBadge[disabled], .cvsui-c-buttonText--errorBadge.cvsui-is-disabled {
+    color: #767676;
+    cursor: not-allowed; }
+    .cvsui-c-buttonText--error[disabled] .cvsui-c-buttonText__icon, .cvsui-c-buttonText--error.cvsui-is-disabled .cvsui-c-buttonText__icon, .cvsui-c-buttonText--errorIcon[disabled] .cvsui-c-buttonText__icon, .cvsui-c-buttonText--errorIcon.cvsui-is-disabled .cvsui-c-buttonText__icon, .cvsui-c-buttonText--errorBadge[disabled] .cvsui-c-buttonText__icon, .cvsui-c-buttonText--errorBadge.cvsui-is-disabled .cvsui-c-buttonText__icon {
+      fill: #767676; }
+  .cvsui-c-buttonText--error .cvsui-c-buttonText__icon, .cvsui-c-buttonText--errorIcon .cvsui-c-buttonText__icon, .cvsui-c-buttonText--errorBadge .cvsui-c-buttonText__icon {
+    fill: currentColor; }
+
+.cvsui-c-buttonText--errorIcon, .cvsui-c-buttonText--errorIcon:visited, .cvsui-c-buttonText--errorIcon:focus, .cvsui-c-buttonText--errorIcon:hover, .cvsui-c-buttonText--errorIcon:active {
+  text-decoration: none; }
+
+.cvsui-c-buttonText--info, .cvsui-c-buttonText--infoIcon, .cvsui-c-buttonText--infoBadge {
+  color: #00334b; }
+  .cvsui-c-buttonText--info:visited, .cvsui-c-buttonText--info.cvsui-is-visited, .cvsui-c-buttonText--infoIcon:visited, .cvsui-c-buttonText--infoIcon.cvsui-is-visited, .cvsui-c-buttonText--infoBadge:visited, .cvsui-c-buttonText--infoBadge.cvsui-is-visited {
+    color: #00334b; }
+  .cvsui-c-buttonText--info:focus, .cvsui-c-buttonText--info.cvsui-is-focus, .cvsui-c-buttonText--infoIcon:focus, .cvsui-c-buttonText--infoIcon.cvsui-is-focus, .cvsui-c-buttonText--infoBadge:focus, .cvsui-c-buttonText--infoBadge.cvsui-is-focus {
+    color: #00334b; }
+  .cvsui-c-buttonText--info:hover, .cvsui-c-buttonText--info.cvsui-is-hover, .cvsui-c-buttonText--infoIcon:hover, .cvsui-c-buttonText--infoIcon.cvsui-is-hover, .cvsui-c-buttonText--infoBadge:hover, .cvsui-c-buttonText--infoBadge.cvsui-is-hover {
+    color: #006291; }
+  .cvsui-c-buttonText--info:active, .cvsui-c-buttonText--info.cvsui-is-active, .cvsui-c-buttonText--infoIcon:active, .cvsui-c-buttonText--infoIcon.cvsui-is-active, .cvsui-c-buttonText--infoBadge:active, .cvsui-c-buttonText--infoBadge.cvsui-is-active {
+    color: #001c2a; }
+  .cvsui-c-buttonText--info[disabled], .cvsui-c-buttonText--info.cvsui-is-disabled, .cvsui-c-buttonText--infoIcon[disabled], .cvsui-c-buttonText--infoIcon.cvsui-is-disabled, .cvsui-c-buttonText--infoBadge[disabled], .cvsui-c-buttonText--infoBadge.cvsui-is-disabled {
+    color: #767676;
+    cursor: not-allowed; }
+    .cvsui-c-buttonText--info[disabled] .cvsui-c-buttonText__icon, .cvsui-c-buttonText--info.cvsui-is-disabled .cvsui-c-buttonText__icon, .cvsui-c-buttonText--infoIcon[disabled] .cvsui-c-buttonText__icon, .cvsui-c-buttonText--infoIcon.cvsui-is-disabled .cvsui-c-buttonText__icon, .cvsui-c-buttonText--infoBadge[disabled] .cvsui-c-buttonText__icon, .cvsui-c-buttonText--infoBadge.cvsui-is-disabled .cvsui-c-buttonText__icon {
+      fill: #767676; }
+  .cvsui-c-buttonText--info .cvsui-c-buttonText__icon, .cvsui-c-buttonText--infoIcon .cvsui-c-buttonText__icon, .cvsui-c-buttonText--infoBadge .cvsui-c-buttonText__icon {
+    fill: currentColor; }
+
+.cvsui-c-buttonText--infoIcon, .cvsui-c-buttonText--infoIcon:visited, .cvsui-c-buttonText--infoIcon:focus, .cvsui-c-buttonText--infoIcon:hover, .cvsui-c-buttonText--infoIcon:active {
+  text-decoration: none; }
+
+.cvsui-c-buttonText--success, .cvsui-c-buttonText--successIcon, .cvsui-c-buttonText--successBadge {
+  color: #417505; }
+  .cvsui-c-buttonText--success:visited, .cvsui-c-buttonText--success.cvsui-is-visited, .cvsui-c-buttonText--successIcon:visited, .cvsui-c-buttonText--successIcon.cvsui-is-visited, .cvsui-c-buttonText--successBadge:visited, .cvsui-c-buttonText--successBadge.cvsui-is-visited {
+    color: #417505; }
+  .cvsui-c-buttonText--success:focus, .cvsui-c-buttonText--success.cvsui-is-focus, .cvsui-c-buttonText--successIcon:focus, .cvsui-c-buttonText--successIcon.cvsui-is-focus, .cvsui-c-buttonText--successBadge:focus, .cvsui-c-buttonText--successBadge.cvsui-is-focus {
+    color: #417505; }
+  .cvsui-c-buttonText--success:hover, .cvsui-c-buttonText--success.cvsui-is-hover, .cvsui-c-buttonText--successIcon:hover, .cvsui-c-buttonText--successIcon.cvsui-is-hover, .cvsui-c-buttonText--successBadge:hover, .cvsui-c-buttonText--successBadge.cvsui-is-hover {
+    color: #2d5300; }
+  .cvsui-c-buttonText--success:active, .cvsui-c-buttonText--success.cvsui-is-active, .cvsui-c-buttonText--successIcon:active, .cvsui-c-buttonText--successIcon.cvsui-is-active, .cvsui-c-buttonText--successBadge:active, .cvsui-c-buttonText--successBadge.cvsui-is-active {
+    color: #1f3a00; }
+  .cvsui-c-buttonText--success[disabled], .cvsui-c-buttonText--success.cvsui-is-disabled, .cvsui-c-buttonText--successIcon[disabled], .cvsui-c-buttonText--successIcon.cvsui-is-disabled, .cvsui-c-buttonText--successBadge[disabled], .cvsui-c-buttonText--successBadge.cvsui-is-disabled {
+    color: #767676;
+    cursor: not-allowed; }
+    .cvsui-c-buttonText--success[disabled] .cvsui-c-buttonText__icon, .cvsui-c-buttonText--success.cvsui-is-disabled .cvsui-c-buttonText__icon, .cvsui-c-buttonText--successIcon[disabled] .cvsui-c-buttonText__icon, .cvsui-c-buttonText--successIcon.cvsui-is-disabled .cvsui-c-buttonText__icon, .cvsui-c-buttonText--successBadge[disabled] .cvsui-c-buttonText__icon, .cvsui-c-buttonText--successBadge.cvsui-is-disabled .cvsui-c-buttonText__icon {
+      fill: #767676; }
+  .cvsui-c-buttonText--success .cvsui-c-buttonText__icon, .cvsui-c-buttonText--successIcon .cvsui-c-buttonText__icon, .cvsui-c-buttonText--successBadge .cvsui-c-buttonText__icon {
+    fill: currentColor; }
+
+.cvsui-c-buttonText--successIcon, .cvsui-c-buttonText--successIcon:visited, .cvsui-c-buttonText--successIcon:focus, .cvsui-c-buttonText--successIcon:hover, .cvsui-c-buttonText--successIcon:active {
+  text-decoration: none; }
+
+.cvsui-c-buttonText--warning, .cvsui-c-buttonText--warningIcon, .cvsui-c-buttonText--warningBadge {
+  color: #7a6304; }
+  .cvsui-c-buttonText--warning:visited, .cvsui-c-buttonText--warning.cvsui-is-visited, .cvsui-c-buttonText--warningIcon:visited, .cvsui-c-buttonText--warningIcon.cvsui-is-visited, .cvsui-c-buttonText--warningBadge:visited, .cvsui-c-buttonText--warningBadge.cvsui-is-visited {
+    color: #7a6304; }
+  .cvsui-c-buttonText--warning:focus, .cvsui-c-buttonText--warning.cvsui-is-focus, .cvsui-c-buttonText--warningIcon:focus, .cvsui-c-buttonText--warningIcon.cvsui-is-focus, .cvsui-c-buttonText--warningBadge:focus, .cvsui-c-buttonText--warningBadge.cvsui-is-focus {
+    color: #7a6304; }
+  .cvsui-c-buttonText--warning:hover, .cvsui-c-buttonText--warning.cvsui-is-hover, .cvsui-c-buttonText--warningIcon:hover, .cvsui-c-buttonText--warningIcon.cvsui-is-hover, .cvsui-c-buttonText--warningBadge:hover, .cvsui-c-buttonText--warningBadge.cvsui-is-hover {
+    color: #554500; }
+  .cvsui-c-buttonText--warning:active, .cvsui-c-buttonText--warning.cvsui-is-active, .cvsui-c-buttonText--warningIcon:active, .cvsui-c-buttonText--warningIcon.cvsui-is-active, .cvsui-c-buttonText--warningBadge:active, .cvsui-c-buttonText--warningBadge.cvsui-is-active {
+    color: #856d00; }
+  .cvsui-c-buttonText--warning[disabled], .cvsui-c-buttonText--warning.cvsui-is-disabled, .cvsui-c-buttonText--warningIcon[disabled], .cvsui-c-buttonText--warningIcon.cvsui-is-disabled, .cvsui-c-buttonText--warningBadge[disabled], .cvsui-c-buttonText--warningBadge.cvsui-is-disabled {
+    color: #767676;
+    cursor: not-allowed; }
+    .cvsui-c-buttonText--warning[disabled] .cvsui-c-buttonText__icon, .cvsui-c-buttonText--warning.cvsui-is-disabled .cvsui-c-buttonText__icon, .cvsui-c-buttonText--warningIcon[disabled] .cvsui-c-buttonText__icon, .cvsui-c-buttonText--warningIcon.cvsui-is-disabled .cvsui-c-buttonText__icon, .cvsui-c-buttonText--warningBadge[disabled] .cvsui-c-buttonText__icon, .cvsui-c-buttonText--warningBadge.cvsui-is-disabled .cvsui-c-buttonText__icon {
+      fill: #767676; }
+  .cvsui-c-buttonText--warning .cvsui-c-buttonText__icon, .cvsui-c-buttonText--warningIcon .cvsui-c-buttonText__icon, .cvsui-c-buttonText--warningBadge .cvsui-c-buttonText__icon {
+    fill: currentColor; }
+
+.cvsui-c-buttonText--warningIcon, .cvsui-c-buttonText--warningIcon:visited, .cvsui-c-buttonText--warningIcon:focus, .cvsui-c-buttonText--warningIcon:hover, .cvsui-c-buttonText--warningIcon:active {
+  text-decoration: none; }
+
+.cvsui-c-buttonText--fwNormal {
+  font-weight: normal; }
+
+.cvsui-c-buttonText--fwBold {
+  font-weight: bold; }
+
+.cvsui-c-buttonText--xs {
+  min-height: 20px;
+  font-size: 12px;
+  line-height: 14px; }
+  .cvsui-c-buttonText--xs:before {
+    top: -4px;
+    bottom: -4px; }
+  .cvsui-c-buttonText--xs .cvsui-c-buttonText__icon {
+    width: 16px;
+    height: 16px; }
+  .cvsui-c-buttonText--xs .cvsui-c-buttonText__badge {
+    min-width: 16px;
+    height: 16px;
+    padding: 2px 5px 2px 4px;
+    font-size: 12px; }
+
+.cvsui-c-buttonText--sm {
+  min-height: 24px;
+  font-size: 14px;
+  line-height: 16px; }
+  .cvsui-c-buttonText--sm:before {
+    top: -6px;
+    bottom: -6px; }
+  .cvsui-c-buttonText--sm .cvsui-c-buttonText__icon {
+    width: 20px;
+    height: 20px; }
+  .cvsui-c-buttonText--sm .cvsui-c-buttonText__badge {
+    min-width: 20px;
+    height: 20px; }
+
+.cvsui-c-buttonText--lg {
+  min-height: 32px;
+  font-size: 18px;
+  line-height: 20px; }
+  .cvsui-c-buttonText--lg:before {
+    top: -6px;
+    bottom: -6px; }
+  .cvsui-c-buttonText--lg .cvsui-c-buttonText__icon {
+    width: 28px;
+    height: 28px; }
+  .cvsui-c-buttonText--lg .cvsui-c-buttonText__badge {
+    min-width: 24px;
+    height: 24px;
+    padding: 3px 7px 3px 6px;
+    font-size: 18px;
+    border-radius: 12px; }
+
+.cvsui-c-buttonText--fullWidth {
+  width: 100%; }
+
+.cvsui-c-buttonText cvsui-icon {
+  display: inline-flex; }
+    
+
+
+    /* ==========================================================================
        Global Header
        ========================================================================== */
 
@@ -365,6 +657,31 @@ This sample showcases how to build a product page in AMP HTML.
       font-weight: bold;
       text-transform: capitalize;
     }
+
+
+    /* ==========================================================================
+       Base Layout
+       ========================================================================== */
+    
+       .shoppdp-l__main {
+  margin-bottom: 24px; }
+  .shoppdp-l__main .gbcvs-c-pageHd,
+  .shoppdp-l__main .gbcvs-c-productRating,
+  .shoppdp-l__main .shoppdp-c-productPricing {
+    padding-left: 16px;
+    padding-right: 16px; }
+  .shoppdp-l__main .gbcvs-c-productImageShelf {
+    margin-top: 8px; }
+  .shoppdp-l__main .shoppdp-c-productPricing {
+    margin-top: 16px; }
+
+         .shoppdp-l__sidebar {
+  padding: 24px 16px;
+  background: #f2f2f2; }
+  .shoppdp-l__sidebar .gbcvs-c-variantSelector {
+    margin-bottom: 24px; }
+  .shoppdp-l__sidebar .gbcvs-c-pastPurchases {
+    margin-bottom: 8px; }
 
 
     /* ==========================================================================
@@ -492,14 +809,6 @@ This sample showcases how to build a product page in AMP HTML.
   /* ==========================================================================
      Sidebar
      ========================================================================== */
-  
-     .shoppdp-l__sidebar {
-  padding: 24px 16px;
-  background: #f2f2f2; }
-  .shoppdp-l__sidebar .gbcvs-c-variantSelector {
-    margin-bottom: 24px; }
-  .shoppdp-l__sidebar .gbcvs-c-pastPurchases {
-    margin-bottom: 8px; }
 
     .shoppdp-c-shipping {
   margin-top: 16px;
@@ -581,152 +890,155 @@ This sample showcases how to build a product page in AMP HTML.
       </form>
     </div>
 
-    <section class="gbcvs-c-pageHd">
-      <div class="gbcvs-c-pageHd__inner">
-        <div class="gbcvs-c-pageHd__l-left">
-          <h1 class="m1 gbcvs-c-pageHd__heading">Wrigley's Orbit Gum, 40 CT</h1>
+    <div class="shoppdp-l__main">
+      <section class="gbcvs-c-pageHd">
+        <div class="gbcvs-c-pageHd__inner">
+          <div class="gbcvs-c-pageHd__l-left">
+            <h1 class="m1 gbcvs-c-pageHd__heading">Wrigley's Orbit Gum, 40 CT</h1>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- ## Slides preview Gallery -->
-    <!--On desktop we've added a film strip like slide preview. Each product colour has its own image gallery and slide preview.
-    We use [amp-bind](https://www.ampproject.org/docs/reference/components/amp-bind) to update the page selecting the gallery and image preview
-    corresponding to the selected colour. We realized the color selection by using `amp-selector`. Find more the doc and info in The Product Page section below.
+      <!-- ## Slides preview Gallery -->
+      <!--On desktop we've added a film strip like slide preview. Each product colour has its own image gallery and slide preview.
+      We use [amp-bind](https://www.ampproject.org/docs/reference/components/amp-bind) to update the page selecting the gallery and image preview
+      corresponding to the selected colour. We realized the color selection by using `amp-selector`. Find more the doc and info in The Product Page section below.
 
-    The green colour is the default color for the gallery when the page loads.
-    Clicking on a preview image will reveal the image in the gallery via the tap action `on="tap:AMP.setState({product: {selectedSlideForPeppermint: 0}})"`.
+      The green colour is the default color for the gallery when the page loads.
+      Clicking on a preview image will reveal the image in the gallery via the tap action `on="tap:AMP.setState({product: {selectedSlideForPeppermint: 0}})"`.
 
-    See below for more informations on how we use`amp-bind`. -->
-  <div class="product-gallery gbcvs-c-productImageShelf">
-    <ul [hidden]="product.selectedFlavor != 'peppermint'">
-      <li>
-        <amp-img on="tap:AMP.setState({product: {selectedSlideForPeppermint: 0}})"
-                  src="/img/green_apple_1_60x40.jpg"
+      See below for more informations on how we use`amp-bind`. -->
+    <div class="product-gallery gbcvs-c-productImageShelf">
+      <ul [hidden]="product.selectedFlavor != 'peppermint'">
+        <li>
+          <amp-img on="tap:AMP.setState({product: {selectedSlideForPeppermint: 0}})"
+                    src="/img/green_apple_1_60x40.jpg"
+                    width="60" height="40"
+                    class="selected"
+                    [class]="product.selectedSlideForPeppermint == 0 ? 'selected' : '' "
+                    tabindex="0" role="button">
+          </amp-img>
+        </li>
+        <li>
+          <amp-img on="tap:AMP.setState({product: {selectedSlideForPeppermint: 1}})"
+                    src="/img/green_apple_2_60x40.jpg"
+                    width="60" height="40"
+                    [class]="product.selectedSlideForPeppermint == 1 ? 'selected' : '' "
+                    tabindex="1" role="button">
+          </amp-img>
+        </li>
+      </ul>
+
+      <ul hidden [hidden]="product.selectedFlavor != 'spearmint'">
+        <li>
+          <amp-img on="tap:AMP.setState({product: {: 0}})"
+                  src="/img/product1_alt1_60x40.jpg"
                   width="60" height="40"
-                  class="selected"
-                  [class]="product.selectedSlideForPeppermint == 0 ? 'selected' : '' "
+                  class="selected fadeIn"
+                  [class]="product. == 0 ? 'selected fadeIn' : '' "
                   tabindex="0" role="button">
-        </amp-img>
-      </li>
-      <li>
-        <amp-img on="tap:AMP.setState({product: {selectedSlideForPeppermint: 1}})"
-                  src="/img/green_apple_2_60x40.jpg"
-                  width="60" height="40"
-                  [class]="product.selectedSlideForPeppermint == 1 ? 'selected' : '' "
-                  tabindex="1" role="button">
-        </amp-img>
-      </li>
-    </ul>
-
-    <ul hidden [hidden]="product.selectedFlavor != 'spearmint'">
-      <li>
-        <amp-img on="tap:AMP.setState({product: {: 0}})"
-                src="/img/product1_alt1_60x40.jpg"
-                 width="60" height="40"
-                 class="selected fadeIn"
-                 [class]="product. == 0 ? 'selected fadeIn' : '' "
-                 tabindex="0" role="button">
-        </amp-img>
-      </li>
-    </ul>
-  </div>
-   <!-- ## Image Gallery -->
-  <!-- The `amp-carousel` component works very well for product image galleries. Learn how the `amp-carousel` component works [here](/advanced/image_galleries_with_amp-carousel/).
-
-  Notice how we are binding to the `slide` and `class` by using to the values of the variables `selectedSlideForPeppermint` and `selectedFlavor`. -->
-  <div class="product-gallery">
-
-    <amp-carousel id="green-apple-carousel"
-            width="1024" height="682"
-            layout="responsive"
-            type="slides"
-            [slide]="product.selectedSlideForPeppermint"
-            on="slideChange: AMP.setState({product: {selectedSlideForPeppermint: event.index}})"
-            class="fadeIn"
-            [hidden]="product.selectedFlavor != 'peppermint'">
-      <amp-img src="/img/green_apple_1_1024x682.jpg"
-                width="1024" height="682"
-                layout="responsive" on="tap:gallery-lightbox"
-                role="button" tabindex="0">
-      </amp-img>
-      <amp-img src="/img/green_apple_2_1024x685.jpg"
-                width="1024" height="682"
-                layout="responsive" on="tap:gallery-lightbox"
-                role="button" tabindex="0">
-      </amp-img>
-    </amp-carousel>
-
-    <amp-carousel id="golden-apple-carousel"
-            width="1024" height="682"
-            layout="responsive"
-            type="slides"
-            [slide]="product."
-            on="slideChange: AMP.setState({product: {selectedSlideForSpearmint: event.index}})"
-            hidden
-            class="fadeIn"
-            [hidden]="product.selectedFlavor != 'spearmint'">
-        <amp-img src="/img/golden_apple1_1024x682.jpg"
-                width="1024" height="682"
-                layout="responsive" on="tap:gallery-lightbox"
-                role="button" tabindex="0">
-        </amp-img>
-    </amp-carousel>
-    <!-- ## Full screen image -->
-    <!-- The `amp-image-lightbox` component allows the user to expand an image to fill the viewport.
-    By clicking on each image from the product gallery, the user can see the product image by using the full screen.
-    Learn more [here](/components/amp-image-lightbox/) -->
-      <amp-image-lightbox id="gallery-lightbox" layout="nodisplay">
-        <div on="tap:gallery-lightbox.close" role="button" tabindex="0">
-          <button class="ampstart-btn caps m2 close-gallery-button" on="tap:gallery-lightbox.close" role="button" tabindex="0">
-            Close
-          </button>
-        </div>
-      </amp-image-lightbox>
-
+          </amp-img>
+        </li>
+      </ul>
     </div>
-    <!-- ## Product Configuration -->
-    <!-- We use the `amp-state` component (part of [amp-bind](https://www.ampproject.org/docs/reference/components/amp-bind))
-      to configure the product price depending on the color and the size. We also configure the `defaultSize`
-      for each product when you switch between colours and the size you previously selected is not available for the new color -->
-  <amp-state id="product">
-    <script type="application/json">
-    {
-      "selectedFlavor": "green",
-      "selectedSlideForSpearmint": 0,
-      "selectedSlideForPeppermint": 0,
-      "moreItemsPageIndex": 0,
-      "hasMorePages": true,
-      "peppermint": {
-        "price": "$1.23"
-      },
-      "spearmint": {
-        "price": "$4.56"
-      }
-    }
-    </script>
-  </amp-state>
+    <!-- ## Image Gallery -->
+    <!-- The `amp-carousel` component works very well for product image galleries. Learn how the `amp-carousel` component works [here](/advanced/image_galleries_with_amp-carousel/).
 
-    <!-- ## Product price -->
-    <!-- We use [amp-bind](https://www.ampproject.org/docs/reference/components/amp-bind) to update the price of the product
-      depending on the selected colour.
+    Notice how we are binding to the `slide` and `class` by using to the values of the variables `selectedSlideForPeppermint` and `selectedFlavor`. -->
+    <div class="product-gallery">
 
-    We bind the `text` attribute to the
-      value of expression `product[product.selectedFlavor].sizes[product.selectedSize]`. `product` is the id `amp-state` json described in the Product Configuration section.
+      <amp-carousel id="green-apple-carousel"
+              width="1024" height="682"
+              layout="responsive"
+              type="slides"
+              [slide]="product.selectedSlideForPeppermint"
+              on="slideChange: AMP.setState({product: {selectedSlideForPeppermint: event.index}})"
+              class="fadeIn"
+              [hidden]="product.selectedFlavor != 'peppermint'">
+        <amp-img src="/img/green_apple_1_1024x682.jpg"
+                  width="1024" height="682"
+                  layout="responsive" on="tap:gallery-lightbox"
+                  role="button" tabindex="0">
+        </amp-img>
+        <amp-img src="/img/green_apple_2_1024x685.jpg"
+                  width="1024" height="682"
+                  layout="responsive" on="tap:gallery-lightbox"
+                  role="button" tabindex="0">
+        </amp-img>
+      </amp-carousel>
 
-    Notice how we set $1.99 value as the default for the price:  expressions
-      will not be evaluated at the page load.
+      <amp-carousel id="golden-apple-carousel"
+              width="1024" height="682"
+              layout="responsive"
+              type="slides"
+              [slide]="product."
+              on="slideChange: AMP.setState({product: {selectedSlideForSpearmint: event.index}})"
+              hidden
+              class="fadeIn"
+              [hidden]="product.selectedFlavor != 'spearmint'">
+          <amp-img src="/img/golden_apple1_1024x682.jpg"
+                  width="1024" height="682"
+                  layout="responsive" on="tap:gallery-lightbox"
+                  role="button" tabindex="0">
+          </amp-img>
+      </amp-carousel>
+      <!-- ## Full screen image -->
+      <!-- The `amp-image-lightbox` component allows the user to expand an image to fill the viewport.
+      By clicking on each image from the product gallery, the user can see the product image by using the full screen.
+      Learn more [here](/components/amp-image-lightbox/) -->
+        <amp-image-lightbox id="gallery-lightbox" layout="nodisplay">
+          <div on="tap:gallery-lightbox.close" role="button" tabindex="0">
+            <button class="ampstart-btn caps m2 close-gallery-button" on="tap:gallery-lightbox.close" role="button" tabindex="0">
+              Close
+            </button>
+          </div>
+        </amp-image-lightbox>
 
-     We use `amp-selector` together with `amp-bind` to update the page for showing the price, the size availability, the gallery and preview of images.
-    Every time you select a color, we call `AMP.setState` with `{selectedColor: event.targetOption}`. This is triggering
-    all the attributes and elements binded to `selectedColor` to update: the price (binded with the attribute `[text]`), the gallery, the image preview and the size selector (all binded with `[class]`). -->
-    <div class="shoppdp-c-productPricing">
-      <div class="shoppdp-c-productPricing__primaryDescGroup">
-        <p class="shoppdp-c-productPricing__actual">
-          <span [text]="product[product.selectedFlavor].price">$5.99</span>
-        </p>
       </div>
-    </div>
+      <!-- ## Product Configuration -->
+      <!-- We use the `amp-state` component (part of [amp-bind](https://www.ampproject.org/docs/reference/components/amp-bind))
+        to configure the product price depending on the color and the size. We also configure the `defaultSize`
+        for each product when you switch between colours and the size you previously selected is not available for the new color -->
+    <amp-state id="product">
+      <script type="application/json">
+      {
+        "selectedFlavor": "green",
+        "selectedSlideForSpearmint": 0,
+        "selectedSlideForPeppermint": 0,
+        "moreItemsPageIndex": 0,
+        "hasMorePages": true,
+        "peppermint": {
+          "price": "$1.23"
+        },
+        "spearmint": {
+          "price": "$4.56"
+        }
+      }
+      </script>
+    </amp-state>
+
+      <!-- ## Product price -->
+      <!-- We use [amp-bind](https://www.ampproject.org/docs/reference/components/amp-bind) to update the price of the product
+        depending on the selected colour.
+
+      We bind the `text` attribute to the
+        value of expression `product[product.selectedFlavor].sizes[product.selectedSize]`. `product` is the id `amp-state` json described in the Product Configuration section.
+
+      Notice how we set $1.99 value as the default for the price:  expressions
+        will not be evaluated at the page load.
+
+      We use `amp-selector` together with `amp-bind` to update the page for showing the price, the size availability, the gallery and preview of images.
+      Every time you select a color, we call `AMP.setState` with `{selectedColor: event.targetOption}`. This is triggering
+      all the attributes and elements binded to `selectedColor` to update: the price (binded with the attribute `[text]`), the gallery, the image preview and the size selector (all binded with `[class]`). -->
+      <div class="shoppdp-c-productPricing">
+        <div class="shoppdp-c-productPricing__primaryDescGroup">
+          <p class="shoppdp-c-productPricing__actual">
+            <span [text]="product[product.selectedFlavor].price">$5.99</span>
+          </p>
+        </div>
+      </div>
+
+    </div> <!-- /. main -->
 
     <!-- ## Product page -->
     <!-- The add-to-cart action action is implemented using  [amp-form](/components/amp-form/). In our sample we use the [amp-selector](/components/amp-selector/) for selecting different product properties.
@@ -739,6 +1051,54 @@ This sample showcases how to build a product page in AMP HTML.
 
     <!-- We use the `CLIENT_ID` variable to identify the user, this enables storing a shopping cart between repeated visits of an AMP page (either via the AMP Cache or the original host). This variable can be used inside an amp-form by declaring an hidden input value with `default-value="CLIENT_ID(cart)`. Read more about variable substitution [here](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md). -->
     <div class="shoppdp-l__sidebar">
+        <form id="order" method="POST"
+        action-xhr="/samples_templates/product_page/add_to_cart"
+        target="_top" class="flex flex-wrap m1">
+          <div class="items-center flex">
+            <label for="color">Flavor:</label>
+            <amp-selector name="Flavor"
+                    layout="container"
+                    [selected]="product.selectedFlavor"
+                    on="select:AMP.setState({
+                      product: {
+                        selectedFlavor: event.targetOption,
+                        selectedSlideForPeppermint: 0,
+                        selectedSlideForYellow: 0,
+                      }
+                    })">
+              <ul class="p0 m1">
+                <li>
+                  <div option="peppermint" selected class="square green"></div>
+                </li>
+                <li>
+                  <div option="spearmint" class="square golden"></div>
+                </li>
+              </ul>
+            </amp-selector>
+          </div>
+          <div class="items-center flex">
+            <label for="quantity">Quantity:</label>
+            <amp-selector name="quantity" layout="container">
+              <ul class="p0 m1">
+                <li option="1" selected>1</li>
+                <li option="2">2</li>
+                <li option="3">3</li>
+              </ul>
+            </amp-selector>
+          </div>
+          <div class="items-center flex my1">
+            <input type="submit" class="ampstart-btn caps" name="add-to-cart" value="add to cart">
+          </div>
+          <input type="hidden" name="name" value="Apple">
+          <input type="hidden" name="price" value="$1.99">
+          <input name="clientId" type="hidden" value="CLIENT_ID(cart)" data-amp-replace="CLIENT_ID">
+          <div submit-error>
+            <template type="amp-mustache">
+              Error! Looks like something went wrong with your shopping cart, please try to add an item again. {{error}}
+            </template>
+          </div>
+        </form>
+
         <pdp-product-two-day-shipping two-day-shipping-available="true" class="gb-ui">
           <div class="shoppdp-c-shipping">
             <p class="shoppdp-c-shipping__heading">Eligible for 2-day shipping.</p>
@@ -752,53 +1112,7 @@ This sample showcases how to build a product page in AMP HTML.
         </pdp-product-two-day-shipping>
       </div>
 
-      <form id="order" method="POST"
-            action-xhr="/samples_templates/product_page/add_to_cart"
-            target="_top" class="flex flex-wrap m1">
-        <div class="items-center flex">
-          <label for="color">Flavor:</label>
-          <amp-selector name="Flavor"
-                  layout="container"
-                  [selected]="product.selectedFlavor"
-                  on="select:AMP.setState({
-                    product: {
-                      selectedFlavor: event.targetOption,
-                      selectedSlideForPeppermint: 0,
-                      selectedSlideForYellow: 0,
-                    }
-                  })">
-            <ul class="p0 m1">
-              <li>
-                <div option="peppermint" selected class="square green"></div>
-              </li>
-              <li>
-                <div option="spearmint" class="square golden"></div>
-              </li>
-            </ul>
-          </amp-selector>
-        </div>
-        <div class="items-center flex">
-          <label for="quantity">Quantity:</label>
-          <amp-selector name="quantity" layout="container">
-            <ul class="p0 m1">
-              <li option="1" selected>1</li>
-              <li option="2">2</li>
-              <li option="3">3</li>
-            </ul>
-          </amp-selector>
-        </div>
-        <div class="items-center flex my1">
-          <input type="submit" class="ampstart-btn caps" name="add-to-cart" value="add to cart">
-        </div>
-        <input type="hidden" name="name" value="Apple">
-        <input type="hidden" name="price" value="$1.99">
-        <input name="clientId" type="hidden" value="CLIENT_ID(cart)" data-amp-replace="CLIENT_ID">
-        <div submit-error>
-          <template type="amp-mustache">
-            Error! Looks like something went wrong with your shopping cart, please try to add an item again. {{error}}
-          </template>
-        </div>
-      </form>
+      
 
     <!-- ## Tab panels -->
     <!-- Use `amp-selector` styled as tab panels to add additional data about your product.
