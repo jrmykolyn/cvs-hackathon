@@ -288,6 +288,100 @@ This sample showcases how to build a product page in AMP HTML.
       right: 0;
     }
 
+    /* ==========================================================================
+       CVS Styles
+       ========================================================================== */
+    
+    body {
+      margin: 0;
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.5;
+      font-weight: normal;
+      color: #333;
+      text-align: left;
+      background-color: #fff;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin: 0;
+      font-family: Helvetica, Arial, sans-serif;
+      font-weight: bold;
+      line-height: 1.2;
+      color: #000;
+    }
+
+    h1 {
+      font-size: 36px;
+      line-height: 1.2;
+      letter-spacing: -1.5px;
+    }
+
+    h2 {
+      font-size: 28px;
+      line-height: 1.2;
+      letter-spacing: -1px;
+    }
+
+    h3 {
+      font-size: 22px;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+    }
+
+    h4 {
+      font-size: 18px;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+    }
+
+    h5 {
+      font-size: 16px;
+      line-height: 1.2;
+    }
+
+    h6 {
+      font-size: 14px;
+      line-height: 1.2;
+    }
+
+
+    /* ==========================================================================
+       Global Header
+       ========================================================================== */
+    
+    .header {
+      background-color: #cc0000;
+      box-shadow: none;
+    }
+
+    .header #sample-logo {
+      font-weight: bold;
+      text-transform: capitalize;
+    }
+
+
+    /* ==========================================================================
+       Page Header
+       ========================================================================== */
+    
+    .gbcvs-c-pageHd__heading {
+      color: #000;
+      display: block;
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -1px;
+      line-height: 1.2;
+      margin: 0;
+      padding: 0;
+    }
+    
+
     </style>
 
     <!-- ## Metadata -->
@@ -347,17 +441,19 @@ This sample showcases how to build a product page in AMP HTML.
                   alt="navigation"></amp-img>
         </a>
         <form method="GET" action="/samples_templates/product_browse_page[[.Mode]]/search" target="_top">
-          <input name="search" type="search" placeholder="Search">
-          <a id="sample-logo" href="/">Product</a>
-          <input type="submit" value="">
+          <!-- <input name="search" type="search" placeholder="Search"> -->
+          <a id="sample-logo" href="/">CVS Pharmacy</a>
+          <!-- <input type="submit" value=""> -->
         </form>
       </div>
 
-      <h2 class="m1">Apple</h2>
+      <section class="gbcvs-c-pageHd">
+        <h2 class="m1 gbcvs-c-pageHd__heading">Wrigley's Orbit Gum, 40 CT</h2>
+      </section>
 
       <!-- ## Social Sharing -->
       <!-- The Social Share extension provides a common interface for share buttons. Learn more about `amp-social-share` [here](/components/amp-social-share/). -->
-      <div class="m1">
+      <!-- <div class="m1">
         <amp-social-share type="twitter"
                           width="30"
                           height="22"></amp-social-share>
@@ -374,7 +470,7 @@ This sample showcases how to build a product page in AMP HTML.
         <amp-social-share type="pinterest"
                           width="33"
                           height="22"></amp-social-share>
-      </div>
+      </div> -->
 
       <p id="product-description" class="m1">Lorem ipsum dolor sit amet, ut sed non vel mattis. Et nulla suscipit ante ligula nisl in. Ut venenatis et mauris, mauris porta vulputate tellus mauris integer facilisis.</p>
       <!-- ## Video -->
@@ -735,7 +831,7 @@ This sample showcases how to build a product page in AMP HTML.
               width="auto"
               height="145"
               layout="fixed-height"
-              src="/json/related_products.json"
+              src="https://b46a02bc.ngrok.io/product/1990031"
               [src]="myState.items"
               id="show-more-list">
       <template type="amp-mustache">
