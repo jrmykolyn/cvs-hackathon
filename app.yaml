@@ -1,0 +1,122 @@
+#	Copyright 2016, Google, Inc.
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#    http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+runtime: go
+api_version: go1
+threadsafe: yes
+
+# cache all static assets for at most 1 day.
+default_expiration: 1d
+
+handlers:
+- url: /sw\.js$
+  secure: always
+  static_files: dist/sw.js
+  upload: dist/sw\.js$
+  expiration: 0
+  http_headers:
+    Access-Control-Allow-Origin: "*"
+
+- url: /playground/sw\.js$
+  secure: always
+  static_files: dist/playground/sw.js
+  upload: dist/playground/sw\.js$
+  expiration: 0
+  http_headers:
+    Access-Control-Allow-Origin: "*"
+
+- url: /favicons
+  static_dir: dist/favicons
+  expiration: 30d
+  secure: always
+  http_headers:
+    Access-Control-Allow-Origin: "*"
+
+- url: /img
+  static_dir: dist/img
+  secure: always
+  http_headers:
+    Access-Control-Allow-Origin: "*"
+
+- url: /styles
+  static_dir: dist/styles
+  secure: always
+  http_headers:
+    Access-Control-Allow-Origin: "*"
+
+- url: /scripts
+  static_dir: dist/scripts
+  secure: always
+  http_headers:
+    Access-Control-Allow-Origin: "*"
+
+- url: /video
+  static_dir: dist/video
+  secure: always
+  http_headers:
+
+- url: /polymer/detail/.*
+  static_files: dist/polymer/index.html
+  upload: index.html
+  secure: always
+
+- url: /polymer/src
+  static_dir: dist/polymer/src
+  secure: always
+
+- url: /polymer/list/.*
+  static_files: dist/polymer/index.html
+  upload: index.html
+  secure: always
+
+- url: /polymer/service-worker\.js
+  secure: always
+  static_files: dist/polymer/service-worker.js
+  upload: dist/polymer/service-worker\.js
+  expiration: 0
+  http_headers:
+    Access-Control-Allow-Origin: "*"
+
+- url: /polymer/
+  static_files: dist/polymer/index.html
+  upload: dist/polymer/index.html
+
+- url: /.*
+  script: _go_app
+
+skip_files:
+- ^polymer(/.*)?
+- .well-known
+- ^node_modules(/.*)?
+- ^.*scripts(/.*)?
+- ^playground/node_modules(/.*)?
+- ^playground/src(/.*)?
+- ^playground/dist(/.*)?
+- ^playground/.cache(/.*)?
+- ^playground/img(/.*)?
+- ^polymer/node_modules(/.*)?
+- ^polymer/src(/.*)?
+- ^polymer/dist(/.*)?
+- ^polymer/.cache(/.*)?
+- ^polymer/img(/.*)?
+- ^src(/.*)?
+- ^spec(/.*)?
+- ^data(/.*)?
+- ^static(/.*)?
+- ^tasks(/.*)?
+- ^tmp(/.*)?
+- ^api(/.*)?
+- ^\.git(/.*)?
+- ^lib(/.*)?
+- ^android(/.*)?
+- ^(.*/)?.*\.DS_Store$
+- ^(.*/)?.*\.swp$

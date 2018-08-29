@@ -1,0 +1,17 @@
+{{^includesAnalytics}}
+<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+{{/includesAnalytics}}
+<meta name="amp-google-client-id-api" content="googleanalytics">
+{{^includesServiceWorker}}
+<script async custom-element="amp-install-serviceworker" src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>
+{{/includesServiceWorker}}
+{{^includesAccordion}}
+<script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"></script>
+{{/includesAccordion}}
+{{^includesIframe}}
+<script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
+{{/includesIframe}}
+{{> metadata.html}}
+{{> favicons.html}}
+<link href=https://fonts.gstatic.com rel="dns-prefetch preconnect" crossorigin>
+<link href="https://fonts.googleapis.com/css?family=Inconsolata|Montserrat" rel="stylesheet">

@@ -1,0 +1,136 @@
+<!doctype html>
+<html ⚡ lang="{{document.lang}}">
+  <head>
+    <link as=script href=https://cdn.ampproject.org/v0.js rel=preload>
+    {{{head}}}
+    {{^includesSidebar}}
+    <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+    {{/includesSidebar}}
+    {{#supportsAmpSelector}}
+    <script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"></script>
+    {{/supportsAmpSelector}}
+    {{#document.isAmpStory}}
+    <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
+    <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+    {{/document.isAmpStory}}
+    {{> head.html}}
+    <style amp-custom>
+      {{> css/code.css}}
+      {{> css/ampstart.css}}
+      {{> css/shared.css }}
+      {{> css/example.css}}
+      {{{exampleStyles}}}
+   </style>
+  </head>
+  {{{bodyTag}}}
+  {{{elementsAfterBody}}}
+    {{^isEmbed}}
+    {{> ampstart/navbar.snip.html}}
+      <header class="www-header center" id="top-header">
+        <h1 class="mb1">
+          {{subHeading}} {{#metadata.experiments.length}}<i class="amp-experiment-large"></i>{{/metadata.experiments.length}}
+        </h1>
+        {{#github}}
+        <a href="{{github}}" class="block mb4 caps text-decoration-none">Edit on Github</a>
+        {{/github}}
+
+        <div class="www-index-header-action mx-auto">
+          {{^metadata.disablePlayground}}
+          <a class="ampstart-btn ampstart-btn-secondary caps mb1 mx2 text-decoration-none inline-block"
+             href="/playground/#url={{host}}{{section}}{{urlSource}}">Open in Playground</a>
+          {{/metadata.disablePlayground}}
+          {{#urlPreview}}
+          <a class="ampstart-btn ampstart-btn-secondary caps mb1 mx2 text-decoration-none inline-block"
+             href="{{section}}{{urlPreview}}">View
+             {{#document.isAmpStory}}Story{{/document.isAmpStory}}
+             {{^document.isAmpStory}}Demo{{/document.isAmpStory}}</a>
+          {{/urlPreview}}
+      </div>
+    </header>
+    {{/isEmbed}}
+  {{#supportsAmpSelector}}
+  <amp-selector layout="container">
+  {{/supportsAmpSelector}}
+
+  <main class="flex pl2 mt1">
+    <aside class="www-components-sec-nav col-3 xs-hide sm-hide relative">
+      <ul class="www-component-anchors list-reset m0 p0 px1 caps">
+        {{#headings}}
+        <li class="clearfix mb3">
+          <a href="#{{id}}"
+             class="www-component-anchor text-decoration-none left"
+             {{#supportsAmpSelector}}option="{{id}}"{{/supportsAmpSelector}}>
+            {{name}}</a>
+        </li>
+        {{/headings}}
+      </ul>
+    </aside>
+    <article class="www-components flex-auto col-9">
+      {{#document.isAmpHtmlEmail}}
+      <section class="www-component-desc">
+        {{> about-amp4email.html}}
+      </section>
+      {{/document.isAmpHtmlEmail}}
+
+      {{^isEmbed}} {{#metadata.experiments.length}}
+      <section class="www-component-desc pb4">
+        <div> {{> experiment.html}} </div>
+      </section>
+      {{/metadata.experiments.length}} {{/isEmbed}}
+
+      {{#document.sections}}
+      {{^metadata.hideDoc}} {{#markedDoc}}
+      <section class="www-component-desc">
+        {{{markedDoc}}}
+        {{^isEmptyCodeSection}}
+        <div class="abe-code-container">
+          <div class="abe-code-preview ampstart-card">
+            {{^metadata.hidePreview}}{{#showPreview}}
+            <h3 class="abe-code p1 caps h4">Example</h3>
+              {{#storyPageId}}
+              <button class="story-reload" title="Reload Preview" on="tap:AMP.setState({ {{storyPageVariableId}}: '{{config.api.host}}{{fileName}}index.html?id={{storyPageId}}&' + random()})"></button>
+              {{/storyPageId}}
+            <div class="abe-preview fit">
+              {{^storyPageId}}
+              {{^document.isAmpStory}}
+              {{{preview}}}
+              {{/document.isAmpStory}}
+              {{/storyPageId}}
+              {{#storyPageId}}
+              <div class="abe-story-preview">
+                <amp-iframe
+                  media="(min-width: 650px)"
+                  src="{{config.api.host}}{{fileName}}index.html?id={{storyPageId}}"
+                  [src]="{{storyPageVariableId}}"
+                  width="440" height="732"
+                  sandbox="allow-scripts allow-popups allow-same-origin">
+                  <div placeholder></div>
+                </amp-iframe>
+              </div>
+              {{/storyPageId}}
+            </div>
+            {{/showPreview}}{{/metadata.hidePreview}}
+            <div class="abe-code fit">
+              <pre class="hljs html p0 m0">{{{escapedCode}}}</pre>
+            </div>
+          </div>
+        </div>
+        {{/isEmptyCodeSection}}
+      </section>
+      {{/markedDoc}} {{/metadata.hideDoc}}
+      {{/document.sections}}
+
+    </article>
+    <aside class="col-2 xs-hide sm-hide md-hide"></aside>
+  </main>
+  {{#supportsAmpSelector}}
+  </amp-selector>
+  {{/supportsAmpSelector}}
+
+    {{^isEmbed}}
+    {{> ampstart/footer.snip.html}}
+    {{/isEmbed}}
+    {{> analytics.html}}
+    {{> serviceworker.html}}
+  </body>
+</html>

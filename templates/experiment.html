@@ -1,0 +1,67 @@
+<div class="abe-experiment-warning ampstart-card p1">
+  <h4 class="mb1">Experimental Mode</h4>
+  <p>This example uses the following experimental feature{{#metadata.experiments.1}}s{{/metadata.experiments.1}}: <code class="amp-experiment-list">[{{metadata.experiments}}]</code>. Enable the experiment{{#metadata.experiments.1}}s{{/metadata.experiments.1}} via the button below. Some components require the AMP Dev Channel to be enabled as well. <a href="https://www.ampproject.org/docs/reference/experimental.html">Learn more here</a>.</p>
+
+  <div class="abe-experiment-warning-buttons flex flex-wrap">
+    <button id="experiment-toggle" class="ampstart-btn ampstart-btn-secondary caps mr1 mt1" disabled>Enable Experiment{{#metadata.experiments.1}}s{{/metadata.experiments.1}}</button>
+    <a id="canary-toggle"
+      class="ampstart-btn ampstart-btn-secondary caps mt1 disabled"
+      href="https://cdn.ampproject.org/experiments.html" target="_blank"><span class="caps inline-block white text-decoration-none">Enable Dev Channel</span></a>
+  </div>
+</div>
+<!-- BEGIN INVALID AMP - don't try at home -->
+<script>
+document.addEventListener("DOMContentLoaded", function(event) {
+  (window.AMP = window.AMP || []).push(function(AMP) {
+
+    function enableButton(elementId) {
+      const element = document.getElementById(elementId);
+      if (element.nodeName.toLowerCase() === 'button') {
+        element.removeAttribute('disabled');
+      } else {
+        element.classList.remove('disabled');
+      }
+    }
+
+    function areAllExperimentsEnabled() {
+      {{#metadata.experiments}}
+      console.log('isExperimentOn {{.}}:' + AMP.isExperimentOn('{{.}}'));
+      if (!AMP.isExperimentOn('{{.}}')) {
+        return false;
+      }
+      {{/metadata.experiments}}
+
+      return true;
+    }
+
+    function enableExperiments() {
+      {{#metadata.experiments}}
+      if (!AMP.isExperimentOn('{{.}}')) {
+        AMP.toggleExperiment('{{.}}');
+      }
+      {{/metadata.experiments}}
+
+      location.reload();
+    }
+
+    // enable active experiment button
+    if (!areAllExperimentsEnabled()) {
+      var experimentToggle = document.getElementById("experiment-toggle");
+      experimentToggle.addEventListener("click", enableExperiments);
+      enableButton('experiment-toggle');
+    }
+
+    // enable active dev channel button
+    if (!window.AMP_CONFIG.canary) {
+      enableButton('canary-toggle');
+    }
+
+    // show invalid AMP message in dev mode
+    if (window.location.hash.includes('development=1')) {
+      console.log('This sample is intentionally not valid AMP.');
+    }
+  });
+});
+
+</script>
+<!-- END INVALID AMP -->
