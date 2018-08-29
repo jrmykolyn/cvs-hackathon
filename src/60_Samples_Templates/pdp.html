@@ -1245,6 +1245,246 @@ This sample showcases how to build a product page in AMP HTML.
   font-weight: bold; }
 
 
+  /* ==========================================================================
+     Variant Selector
+     ========================================================================== */
+  
+     .gbcvs-c-variantSelector__label {
+  font-size: 16px;
+  line-height: 1.2;
+  color: #000; }
+
+.gbcvs-c-variantSelector__category {
+  font-size: 16px;
+  line-height: 1.2;
+  font-weight: bold;
+  color: #000; }
+
+.gbcvs-c-variantSelector__body {
+  position: relative; }
+
+.gbcvs-c-variantSelector__group {
+  margin-top: 4px; }
+
+.gbcvs-c-variantSelector__footer {
+  margin-top: 8px;
+  text-align: right; }
+
+.gbcvs-c-variantSelectorList {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 4px 0; }
+  .gbcvs-c-variantSelectorList--text {
+    margin: -12px 0 0 0; }
+  .gbcvs-c-variantSelectorList--thumb {
+    margin: -12px 0 0 0; }
+  .gbcvs-c-variantSelectorList--scrollHorizontal {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    min-width: 100%;
+    -webkit-overflow-scrolling: touch; }
+    .gbcvs-c-variantSelectorList--scrollHorizontal::-webkit-scrollbar {
+      display: none; }
+  @media (min-width: 768px) {
+    .gbcvs-c-variantSelectorList--noScroll\@mi {
+      flex-wrap: wrap;
+      min-width: none;
+      overflow-x: none; } }
+
+.gbcvs-c-variantSelectorList__item--text {
+  margin: 12px 12px 0 0; }
+
+.gbcvs-c-variantSelectorList__item--thumb {
+  margin: 12px 12px 0 0; }
+
+.gbcvs-c-variantSelectorButton {
+  position: relative;
+  display: inline-flex;
+  flex: 0 0 auto;
+  justify-content: center;
+  align-items: center;
+  color: #333;
+  border: 2px solid #767676;
+  background: #fff;
+  cursor: pointer;
+  white-space: nowrap; }
+  .gbcvs-c-variantSelectorButton:focus {
+    color: #000;
+    border-color: #000;
+    text-decoration: underline;
+    outline: 1px dotted #000;
+    outline-offset: 2px; }
+  .gbcvs-c-variantSelectorButton:hover {
+    color: #000;
+    border-color: #000;
+    text-decoration: underline; }
+  .gbcvs-c-variantSelectorButton:active {
+    color: #a50000;
+    border-color: #a50000;
+    text-decoration: underline; }
+  .gbcvs-c-variantSelectorButton.gbcvs-is-selected, .gbcvs-c-variantSelectorButton.gbcvs-is-selected:hover {
+    color: #c00;
+    border-color: #c00;
+    pointer-events: none; }
+    .gbcvs-c-variantSelectorButton.gbcvs-is-selected .gbcvs-c-variantSelectorButton__swatch, .gbcvs-c-variantSelectorButton.gbcvs-is-selected:hover .gbcvs-c-variantSelectorButton__swatch {
+      background-color: #c00 !important; }
+    .gbcvs-c-variantSelectorButton.gbcvs-is-selected .gbcvs-c-variantSelectorButton__check, .gbcvs-c-variantSelectorButton.gbcvs-is-selected:hover .gbcvs-c-variantSelectorButton__check {
+      display: block; }
+  .gbcvs-c-variantSelectorButton.gbcvs-is-disabled {
+    opacity: 0.3;
+    pointer-events: none; }
+
+.gbcvs-c-variantSelectorButton--text {
+  height: 44px;
+  padding: 0 16px;
+  text-align: center; }
+
+.gbcvs-c-variantSelectorButton__label {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: bold; }
+
+.gbcvs-c-variantSelectorButton--thumb {
+  width: 80px;
+  height: 80px;
+  padding: 4px; }
+
+.gbcvs-c-variantSelectorButton__image {
+  width: 100%;
+  height: 100%;
+  min-width: 100%;
+  min-height: 100%; }
+
+.gbcvs-c-variantSelectorButton__swatch {
+  position: absolute;
+  right: -4px;
+  bottom: -4px;
+  width: 32px;
+  height: 32px;
+  padding: 6px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  background-color: #b35a4b;
+  box-shadow: 0 0 0 1px #a2a2a2; }
+
+.gbcvs-c-variantSelectorButton__swatchIcon {
+  width: 16px;
+  height: 16px;
+  fill: #fff; }
+
+.gbcvs-c-variantSelectorButton__check {
+  display: none;
+  position: absolute;
+  right: -4px;
+  bottom: -4px;
+  width: 20px;
+  height: 20px;
+  padding: 4px;
+  border-radius: 50%;
+  background-color: #c00; }
+  .gbcvs-c-variantSelectorButton__checkIcon {
+    width: 12px;
+    height: 12px;
+    fill: #fff; }
+
+.gbcvs-c-variantSelectorButton--secondaryAlt {
+  border: 1px solid #767676;
+  border-radius: 4px; }
+  .gbcvs-c-variantSelectorButton--secondaryAlt:focus, .gbcvs-c-variantSelectorButton--secondaryAlt:hover {
+    box-shadow: inset 0 0 0 1px #000; }
+  .gbcvs-c-variantSelectorButton--secondaryAlt.gbcvs-is-selected, .gbcvs-c-variantSelectorButton--secondaryAlt.gbcvs-is-selected:hover {
+    box-shadow: inset 0 0 0 1px #c00; }
+
+.gbcvs-c-variantSelector__toggleBtn {
+  font-weight: normal; }
+
+.gbcvs-c-variantSelector--pdp .gbcvs-c-variantSelector--ALT .gbcvs-c-variantSelectorButton--thumb {
+  width: 60px;
+  height: 60px; }
+
+.gbcvs-c-variantSelector--pdp .gbcvs-c-variantSelector--ALT .gbcvs-c-variantSelectorButton__swatch {
+  width: 28px;
+  height: 28px;
+  padding: 4px; }
+
+.gbcvs-c-variantSelector--pdp .gbcvs-c-variantSelector--ALT .gbcvs-c-variantSelectorButton__swatchIcon {
+  width: 16px;
+  height: 16px; }
+
+@media (min-width: 768px) {
+  .gbcvs-c-variantSelector--pdp .gbcvs-c-variantSelector--ALT .gbcvs-c-variantSelectorList__item--thumb {
+    flex: 1 1 21%;
+    max-width: 68px;
+    min-height: 68px; }
+  .gbcvs-c-variantSelector--pdp .gbcvs-c-variantSelector--ALT .gbcvs-c-variantSelectorButton--thumb {
+    width: 100%;
+    height: 100%; } }
+
+@media (max-width: 767px) {
+  .gbcvs-c-variantSelector--scrollHorizontal\@\<mi .gbcvs-c-variantSelector__body::before {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 0;
+    left: -16px;
+    width: 16px;
+    height: 100%;
+    background: linear-gradient(to right, #f2f2f2 0%, rgba(242, 242, 242, 0) 100%);
+    z-index: 10; }
+  .gbcvs-c-variantSelector--scrollHorizontal\@\<mi .gbcvs-c-variantSelector__body::after {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 0;
+    right: -16px;
+    width: 16px;
+    height: 100%;
+    background: linear-gradient(to right, rgba(242, 242, 242, 0) 0%, #f2f2f2 100%);
+    z-index: 10; }
+  .gbcvs-c-variantSelector--scrollHorizontal\@\<mi .gbcvs-c-variantSelector__group {
+    margin-left: -16px;
+    margin-right: -16px;
+    padding-left: 16px;
+    padding-right: 16px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; }
+    .gbcvs-c-variantSelector--scrollHorizontal\@\<mi .gbcvs-c-variantSelector__group::-webkit-scrollbar {
+      display: none; }
+  .gbcvs-c-variantSelector--scrollHorizontal\@\<mi .gbcvs-c-variantSelectorList {
+    display: flex;
+    flex-wrap: nowrap;
+    min-width: 100%; }
+  .gbcvs-c-variantSelector--scrollHorizontal\@\<mi .gbcvs-c-variantSelectorList__item:last-child {
+    padding-right: 16px; } }
+
+@media (min-width: 768px) {
+  .gbcvs-c-variantSelector----noScroll\@mi {
+    flex-wrap: wrap;
+    min-width: none;
+    overflow-x: none; } }
+
+@media (max-width: 767px) {
+  .gbcvs-c-variantSelector--variantModal .gbcvs-c-variantSelector--scrollHorizontal\@\<mi .gbcvs-c-variantSelector__body::before {
+    left: -16px;
+    width: 16px;
+    background: linear-gradient(to right, white 0%, rgba(242, 242, 242, 0) 100%); }
+  .gbcvs-c-variantSelector--variantModal .gbcvs-c-variantSelector--scrollHorizontal\@\<mi .gbcvs-c-variantSelector__body::after {
+    right: -16px;
+    width: 16px;
+    background: linear-gradient(to right, rgba(242, 242, 242, 0) 0%, white 100%); }
+  .gbcvs-c-variantSelector--variantModal .gbcvs-c-variantSelector--scrollHorizontal\@\<mi .gbcvs-c-variantSelector__group {
+    margin-left: -16px;
+    margin-right: -16px;
+    padding-left: 16px;
+    padding-right: 16px; }
+  .gbcvs-c-variantSelector--variantModal .gbcvs-c-variantSelector--scrollHorizontal\@\<mi .gbcvs-c-variantSelectorList__item:last-child {
+    padding-right: 16px; } }
+pdp-product-header-rating {
+  display: flex; }
+
+
   </style>
 
   <!-- ## Metadata -->
@@ -1509,8 +1749,45 @@ This sample showcases how to build a product page in AMP HTML.
               </ul>
             </amp-selector>
           </div>
+
+          <gbcvs-variant-selector class="gbcvs-c-variantSelector--pdp gb-ui">
+            <gbcvs-variant-selector-row level="0" class="gb-ui" role="undefined">
+              <div class="gbcvs-c-variantSelector gbcvs-c-variantSelector--ALT gbcvs-c-variantSelector--scrollHorizontal@<mi">
+              <div class="gbcvs-c-variantSelector__inner">
+                <div class="gbcvs-c-variantSelector__label"><strong class="gbcvs-c-variantSelector__category">Flavor:</strong> White Peppermint</div>
+                <div class="gbcvs-c-variantSelector__body ">
+                  <nav class="gbcvs-c-variantSelector__group ">
+                    <ul class=" gbcvs-c-variantSelectorList gbcvs-c-variantSelectorList--text ">
+                      <li class="gbcvs-c-variantSelectorList__item  gbcvs-c-variantSelectorList__item--text ">
+                        <button aria-pressed="true" class="gbcvs-c-variantSelectorButton gbcvs-c-variantSelectorButton--secondaryAlt
+                          gbcvs-c-variantSelectorButton--text gbcvs-is-selected" aria-label="Flavor variant; White Peppermint; option 1 of 2" title="White Peppermint">
+                          <span class="gbcvs-c-variantSelectorButton__label">White Peppermint</span>
+                          <div class="gbcvs-c-variantSelectorButton__check">
+                            <cvsui-icon name="icon-check--s" base="gbcvs-c-variantSelectorButton__checkIcon" class="gb-ui" role="undefined">
+                              <svg class="gbcvs-c-variantSelectorButton__checkIcon   ">
+                                <use xlink:href="https://www.cvs.com/bizcontent/cvs-design-system/cvsui-icons/cvsui-icons.svg#icon-check--s"></use>
+                              </svg>
+                            </cvsui-icon>
+                          </div>
+                        </button>
+                      </li>
+                      <li class="gbcvs-c-variantSelectorList__item  gbcvs-c-variantSelectorList__item--text ">
+                        <button aria-pressed="false" class="gbcvs-c-variantSelectorButton gbcvs-c-variantSelectorButton--secondaryAlt
+                          gbcvs-c-variantSelectorButton--text" aria-label="Flavor variant; White Spearmint; option 2 of 2" title="White Spearmint">
+                          <span class="gbcvs-c-variantSelectorButton__label">White Spearmint</span>
+                          <div class="gbcvs-c-variantSelectorButton__check"></div>
+                        </button>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+              </div>
+            </gbcvs-variant-selector-row>
+          </gbcvs-variant-selector>
+
           <div class="items-center flex my1">
-            <input type="submit" class="cvsui-c-button cvsui-c-button--primary cvsui-c-button--lg gbcvs-c-addToCart__atcBtn" name="add-to-cart" value="Add to cart">
+            <input type="submit" class="cvsui-c-button cvsui-c-button--primary cvsui-c-button--lg cvsui-c-button--fullWidth gbcvs-c-addToCart__atcBtn" name="add-to-cart" value="Add to cart">
           </div>
           <input type="hidden" name="name" value="Apple">
           <input type="hidden" name="price" value="$1.99">
