@@ -91,73 +91,6 @@ This sample showcases how to build a product page in AMP HTML.
     .product-gallery amp-img:focus {
       outline: none;
     }
-    form#order label {
-      display: inline;
-      font-weight: 500;
-      font-size: 16px;
-      margin: 0;
-    }
-    form#order .button {
-      width: 100%;
-      max-width: 400px;
-      align-self: center;
-      margin: 16px 20%;
-      box-sizing: border-box;
-    }
-    form#order.amp-form-submitting [name=add-to-cart] {
-      color: #666;
-      background-color: #aaa;
-      cursor: default;
-    }
-    form#order amp-selector > ul {
-      list-style: none;
-      display: flex;
-      align-items: flex-end;
-      justify-content: end;
-    }
-    form#order amp-selector > ul li {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-right: 8px;
-      background: white;
-      height: 40px;
-      min-width: 40px;
-      width: auto;
-    }
-    form#order amp-selector [option] {
-      outline: none;
-    }
-    form#order amp-selector amp-img[option][selected] {
-      outline-width: 1px;
-      outline-style: solid;
-      outline-color: #eb407a;
-      background: none;
-    }
-    form#order amp-selector:not([disabled]) [option][selected]:not([disabled]), amp-img.selected {
-      will-change: box-shadow;
-      box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-      transition: box-shadow 0.3s cubic-bezier(.25,.8,.25,1);
-      color: #fff;
-    }
-
-    form#order amp-selector:not([disabled]) [option][selected]:not([disabled]):not(.unavailable):not(.square) {
-      background-color: #eb407a;
-    }
-
-    form#order amp-selector:not([disabled]) [option][selected]:not([disabled]):not(.unavailable).square {
-      outline: 1px solid #eb407a;
-    }
-
-    form#order amp-selector:not([disabled]) [option]:not([selected]):not([disabled]), amp-img:not([.selected]) {
-      will-change: box-shadow;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-      transition: box-shadow 0.3s cubic-bezier(.25,.8,.25,1);
-    }
-
-    form#order amp-selector[name=color] div:not([selected]):not([disabled]) {
-      opacity: 0.6;
-    }
     @keyframes fadeIn {
       0% {opacity: 0;}
       100% {opacity: 1;}
@@ -198,23 +131,6 @@ This sample showcases how to build a product page in AMP HTML.
     .unavailable:after {
         -webkit-transform: rotate(45deg);
         transform: rotate(45deg);
-    }
-
-    div.square {
-      width: 40px;
-      height: 40px;
-    }
-
-    .green {
-      background-color: #008000;
-    }
-
-    .red {
-      background-color: #FF0000;
-    }
-
-    .golden {
-      background-color: #DAA520;
     }
 
     @media (max-width: 1024px) {
