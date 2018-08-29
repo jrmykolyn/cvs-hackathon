@@ -292,7 +292,7 @@ This sample showcases how to build a product page in AMP HTML.
     /* ==========================================================================
        CVS Styles
        ========================================================================== */
-    
+
     body {
       margin: 0;
       font-family: Helvetica, Arial, sans-serif;
@@ -355,7 +355,7 @@ This sample showcases how to build a product page in AMP HTML.
     /* ==========================================================================
        Global Header
        ========================================================================== */
-    
+
     .header {
       background-color: #cc0000;
       box-shadow: none;
@@ -487,7 +487,7 @@ This sample showcases how to build a product page in AMP HTML.
       padding-left: 16px;
       padding-right: 16px;
     }
-    
+
 
   </style>
 
@@ -571,65 +571,85 @@ This sample showcases how to build a product page in AMP HTML.
     corresponding to the selected colour. We realized the color selection by using `amp-selector`. Find more the doc and info in The Product Page section below.
 
     The green colour is the default color for the gallery when the page loads.
-    Clicking on a preview image will reveal the image in the gallery via the tap action `on="tap:AMP.setState({product: {selectedSlideForGreen: 0}})"`.
+    Clicking on a preview image will reveal the image in the gallery via the tap action `on="tap:AMP.setState({product: {selectedSlideForPeppermint: 0}})"`.
 
     See below for more informations on how we use`amp-bind`. -->
-    <div class="product-gallery gbcvs-c-productImageShelf">
-      <ul [hidden]="product.selectedColor != 'green'">
-        <li>
-          <amp-img on="tap:AMP.setState({product: {selectedSlideForGreen: 0}})" src="/img/green_apple_1_60x40.jpg" width="60" height="40" class="selected" [class]="product.selectedSlideForGreen == 0 ? 'selected' : '' " tabindex="0" role="button">
-          </amp-img>
-        </li>
-        <li>
-          <amp-img on="tap:AMP.setState({product: {selectedSlideForGreen: 1}})" src="/img/green_apple_2_60x40.jpg" width="60" height="40" [class]="product.selectedSlideForGreen == 1 ? 'selected' : '' " tabindex="1" role="button">
-          </amp-img>
-        </li>
-      </ul>
-
-      <ul hidden [hidden]="product.selectedColor != 'golden'">
-        <li>
-          <amp-img on="tap:AMP.setState({product: {selectedSlideForGolden: 0}})" src="/img/product1_alt1_60x40.jpg" width="60" height="40" class="selected fadeIn" [class]="product.selectedSlideForGolden == 0 ? 'selected fadeIn' : '' " tabindex="0" role="button">
-          </amp-img>
-        </li>
-      </ul>
-
-      <ul hidden [hidden]="product.selectedColor != 'red'">
-        <li>
-          <amp-img on="tap:AMP.setState({ product: {selectedSlideForRed : 0}})" src="/img/red_apple_1_60x40.jpg" width="60" height="40" class="selected fadeIn" [class]="product.selectedSlideForRed == 0 ? 'selected fadeIn' : '' " tabindex="0" role="button">
-          </amp-img>
-        </li>
-        <li>
-          <amp-img on="tap:AMP.setState({ product: {selectedSlideForRed : 1}})" src="/img/red_apple_2_60x46.jpg" width="60" height="40" [class]="product.selectedSlideForRed == 1 ? 'selected' : '' " tabindex="1" role="button">
-          </amp-img>
-        </li>
-      </ul>
-    </div>
-    <!-- ## Image Gallery -->
-    <!-- The `amp-carousel` component works very well for product image galleries. Learn how the `amp-carousel` component works [here](/advanced/image_galleries_with_amp-carousel/).
-
-  Notice how we are binding to the `slide` and `class` by using to the values of the variables `selectedSlideForGreen` and `selectedColor`. -->
-    <div class="product-gallery">
-
-      <amp-carousel id="green-apple-carousel" width="1024" height="682" layout="responsive" type="slides" [slide]="product.selectedSlideForGreen" on="slideChange: AMP.setState({product: {selectedSlideForGreen: event.index}})" class="fadeIn" [hidden]="product.selectedColor != 'green'">
-        <amp-img src="/img/green_apple_1_1024x682.jpg" width="1024" height="682" layout="responsive" on="tap:gallery-lightbox" role="button" tabindex="0">
+  <div class="product-gallery gbcvs-c-productImageShelf">
+    <ul [hidden]="product.selectedFlavor != 'peppermint'">
+      <li>
+        <amp-img on="tap:AMP.setState({product: {selectedSlideForPeppermint: 0}})"
+                  src="/img/green_apple_1_60x40.jpg"
+                  width="60" height="40"
+                  class="selected"
+                  [class]="product.selectedSlideForPeppermint == 0 ? 'selected' : '' "
+                  tabindex="0" role="button">
         </amp-img>
-        <amp-img src="/img/green_apple_2_1024x685.jpg" width="1024" height="682" layout="responsive" on="tap:gallery-lightbox" role="button" tabindex="0">
+      </li>
+      <li>
+        <amp-img on="tap:AMP.setState({product: {selectedSlideForPeppermint: 1}})"
+                  src="/img/green_apple_2_60x40.jpg"
+                  width="60" height="40"
+                  [class]="product.selectedSlideForPeppermint == 1 ? 'selected' : '' "
+                  tabindex="1" role="button">
         </amp-img>
-      </amp-carousel>
+      </li>
+    </ul>
 
-      <amp-carousel id="golden-apple-carousel" width="1024" height="682" layout="responsive" type="slides" [slide]="product.selectedSlideForGolden" on="slideChange: AMP.setState({product: {selectedSlideForGolden: event.index}})" hidden class="fadeIn" [hidden]="product.selectedColor != 'golden'">
-        <amp-img src="/img/golden_apple1_1024x682.jpg" width="1024" height="682" layout="responsive" on="tap:gallery-lightbox" role="button" tabindex="0">
+    <ul hidden [hidden]="product.selectedFlavor != 'spearmint'">
+      <li>
+        <amp-img on="tap:AMP.setState({product: {: 0}})"
+                src="/img/product1_alt1_60x40.jpg"
+                 width="60" height="40"
+                 class="selected fadeIn"
+                 [class]="product. == 0 ? 'selected fadeIn' : '' "
+                 tabindex="0" role="button">
         </amp-img>
-      </amp-carousel>
+      </li>
+    </ul>
+  </div>
+   <!-- ## Image Gallery -->
+  <!-- The `amp-carousel` component works very well for product image galleries. Learn how the `amp-carousel` component works [here](/advanced/image_galleries_with_amp-carousel/).
 
-      <amp-carousel id="red-apple-carousel" width="1024" height="682" layout="responsive" type="slides" [slide]="product.selectedSlideForRed" on="slideChange: AMP.setState({product: {selectedSlideForRed: event.index}})" hidden class="fadeIn" [hidden]="product.selectedColor != 'red'">
-        <amp-img src="/img/red_apple_1_1024x682.jpg" width="1024" height="682" layout="responsive" on="tap:gallery-lightbox" role="button" tabindex="0">
+  Notice how we are binding to the `slide` and `class` by using to the values of the variables `selectedSlideForPeppermint` and `selectedFlavor`. -->
+  <div class="product-gallery">
+
+    <amp-carousel id="green-apple-carousel"
+            width="1024" height="682"
+            layout="responsive"
+            type="slides"
+            [slide]="product.selectedSlideForPeppermint"
+            on="slideChange: AMP.setState({product: {selectedSlideForPeppermint: event.index}})"
+            class="fadeIn"
+            [hidden]="product.selectedFlavor != 'peppermint'">
+      <amp-img src="/img/green_apple_1_1024x682.jpg"
+                width="1024" height="682"
+                layout="responsive" on="tap:gallery-lightbox"
+                role="button" tabindex="0">
+      </amp-img>
+      <amp-img src="/img/green_apple_2_1024x685.jpg"
+                width="1024" height="682"
+                layout="responsive" on="tap:gallery-lightbox"
+                role="button" tabindex="0">
+      </amp-img>
+    </amp-carousel>
+
+    <amp-carousel id="golden-apple-carousel"
+            width="1024" height="682"
+            layout="responsive"
+            type="slides"
+            [slide]="product."
+            on="slideChange: AMP.setState({product: {selectedSlideForSpearmint: event.index}})"
+            hidden
+            class="fadeIn"
+            [hidden]="product.selectedFlavor != 'spearmint'">
+        <amp-img src="/img/golden_apple1_1024x682.jpg"
+                width="1024" height="682"
+                layout="responsive" on="tap:gallery-lightbox"
+                role="button" tabindex="0">
         </amp-img>
-        <amp-img src="/img/red_apple_2_1024x793.jpg" width="1024" height="682" layout="responsive" on="tap:gallery-lightbox" role="button" tabindex="0">
-        </amp-img>
-      </amp-carousel>
-      <!-- ## Full screen image -->
-      <!-- The `amp-image-lightbox` component allows the user to expand an image to fill the viewport.
+    </amp-carousel>
+    <!-- ## Full screen image -->
+    <!-- The `amp-image-lightbox` component allows the user to expand an image to fill the viewport.
     By clicking on each image from the product gallery, the user can see the product image by using the full screen.
     Learn more [here](/components/amp-image-lightbox/) -->
       <amp-image-lightbox id="gallery-lightbox" layout="nodisplay">
@@ -645,50 +665,30 @@ This sample showcases how to build a product page in AMP HTML.
     <!-- We use the `amp-state` component (part of [amp-bind](https://www.ampproject.org/docs/reference/components/amp-bind))
       to configure the product price depending on the color and the size. We also configure the `defaultSize`
       for each product when you switch between colours and the size you previously selected is not available for the new color -->
-    <amp-state id="product">
-      <script type="application/json">
-        {
-          "selectedColor": "green",
-          "selectedSize": "S",
-          "selectedSlideForRed": 0,
-          "selectedSlideForGolden": 0,
-          "selectedSlideForGreen": 0,
-          "moreItemsPageIndex": 0,
-          "hasMorePages": true,
-          "green": {
-            "sizes": {
-              "S": "$5.99",
-              "M": "$5.99",
-              "L": "unavailable"
-            },
-            "defaultSize": "S"
-          },
-          "golden": {
-            "sizes": {
-              "S": "$9.99",
-              "M": "unavailable",
-              "L": "$9.99"
-            },
-            "defaultSize": "L"
-          },
-          "red": {
-            "sizes": {
-              "S": "$7.99",
-              "M": "$7.99",
-              "L": "$7.99"
-            },
-            "defaultSize": "M"
-          }
-        }
-      </script>
-    </amp-state>
+  <amp-state id="product">
+    <script type="application/json">
+    {
+      "selectedFlavor": "green",
+      "selectedSlideForSpearmint": 0,
+      "selectedSlideForPeppermint": 0,
+      "moreItemsPageIndex": 0,
+      "hasMorePages": true,
+      "peppermint": {
+        "price": "$1.23"
+      },
+      "spearmint": {
+        "price": "$4.56"
+      }
+    }
+    </script>
+  </amp-state>
 
     <!-- ## Product price -->
     <!-- We use [amp-bind](https://www.ampproject.org/docs/reference/components/amp-bind) to update the price of the product
       depending on the selected colour.
 
     We bind the `text` attribute to the
-      value of expression `product[product.selectedColor].sizes[product.selectedSize]`. `product` is the id `amp-state` json described in the Product Configuration section.
+      value of expression `product[product.selectedFlavor].sizes[product.selectedSize]`. `product` is the id `amp-state` json described in the Product Configuration section.
 
     Notice how we set $1.99 value as the default for the price:  expressions
       will not be evaluated at the page load.
@@ -699,7 +699,7 @@ This sample showcases how to build a product page in AMP HTML.
     <div class="shoppdp-c-productPricing">
       <div class="shoppdp-c-productPricing__primaryDescGroup">
         <p class="shoppdp-c-productPricing__actual">
-          <span [text]="product[product.selectedColor].sizes[product.selectedSize]">$5.99</span>
+          <span [text]="product[product.selectedFlavor].price">$5.99</span>
         </p>
       </div>
     </div>
@@ -714,86 +714,67 @@ This sample showcases how to build a product page in AMP HTML.
       amp-redirect-to:http://ampbyexample.com/shopping_cart/?clientid=amp-123456789 -->
 
     <!-- We use the `CLIENT_ID` variable to identify the user, this enables storing a shopping cart between repeated visits of an AMP page (either via the AMP Cache or the original host). This variable can be used inside an amp-form by declaring an hidden input value with `default-value="CLIENT_ID(cart)`. Read more about variable substitution [here](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md). -->
-
     <div class="shoppdp-l__sidebar">
-      <pdp-product-two-day-shipping two-day-shipping-available="true" class="gb-ui">
-        <div class="shoppdp-c-shipping">
-          <p class="shoppdp-c-shipping__heading">Eligible for 2-day shipping.</p>
-          <p class="shoppdp-c-shipping__desc">Expected delivery in 1-2 business days.</p>
-          <cvsui-button-text custom-css="shoppdp-c-shipping__detailsBtn" size="SM" styles="secondaryAlt" weight="normal" label="Details" class="gb-ui">
-            <button class="cvsui-c-buttonText shoppdp-c-shipping__detailsBtn cvsui-c-buttonText--secondaryAlt cvsui-c-buttonText--sm cvsui-c-buttonText--fwNormal  " target="_self" role="undefined">
-              Details
-            </button>
-          </cvsui-button-text>
-        </div>
-      </pdp-product-two-day-shipping>
-    </div>
+        <pdp-product-two-day-shipping two-day-shipping-available="true" class="gb-ui">
+          <div class="shoppdp-c-shipping">
+            <p class="shoppdp-c-shipping__heading">Eligible for 2-day shipping.</p>
+            <p class="shoppdp-c-shipping__desc">Expected delivery in 1-2 business days.</p>
+            <cvsui-button-text custom-css="shoppdp-c-shipping__detailsBtn" size="SM" styles="secondaryAlt" weight="normal" label="Details" class="gb-ui">
+              <button class="cvsui-c-buttonText shoppdp-c-shipping__detailsBtn cvsui-c-buttonText--secondaryAlt cvsui-c-buttonText--sm cvsui-c-buttonText--fwNormal  " target="_self" role="undefined">
+                Details
+              </button>
+            </cvsui-button-text>
+          </div>
+        </pdp-product-two-day-shipping>
+      </div>
 
-    <form id="order" method="POST" action-xhr="/samples_templates/product_page/add_to_cart" target="_top" class="flex flex-wrap m1">
-      <div class="items-center flex">
-        <label for="color">Color:</label>
-        <amp-selector name="color" layout="container" [selected]="product.selectedColor" on="select:AMP.setState({
+      <form id="order" method="POST"
+            action-xhr="/samples_templates/product_page/add_to_cart"
+            target="_top" class="flex flex-wrap m1">
+        <div class="items-center flex">
+          <label for="color">Flavor:</label>
+          <amp-selector name="Flavor"
+                  layout="container"
+                  [selected]="product.selectedFlavor"
+                  on="select:AMP.setState({
                     product: {
-                      selectedColor: event.targetOption,
-                      selectedSlideForRed: 0,
-                      selectedSlideForGreen: 0,
+                      selectedFlavor: event.targetOption,
+                      selectedSlideForPeppermint: 0,
                       selectedSlideForYellow: 0,
-                      selectedSize: product[event.targetOption].sizes[product.selectedSize] != 'unavailable' ? product.selectedSize : product[event.targetOption].defaultSize
                     }
                   })">
-          <ul class="p0 m1">
-            <li>
-              <div option="green" selected class="square green"></div>
-            </li>
-            <li>
-              <div option="golden" class="square golden"></div>
-            </li>
-            <li>
-              <div option="red" class="square red"></div>
-            </li>
-          </ul>
-        </amp-selector>
-      </div>
-      <div class="items-center flex">
-        <label for="quantity">Quantity:</label>
-        <amp-selector name="quantity" layout="container">
-          <ul class="p0 m1">
-            <li option="1" selected>1</li>
-            <li option="2">2</li>
-            <li option="3">3</li>
-          </ul>
-        </amp-selector>
-      </div>
-      <div class="items-center flex">
-        <label for="size">Size:</label>
-        <amp-selector name="size" layout="container" on="select:AMP.setState({ product: {selectedSize: event.targetOption}})" [selected]="(product[product.selectedColor].sizes[product.selectedSize] != 'unavailable')
-                      ? product.selectedSize
-                      : product[product.selectedColor].defaultSize">
-          <ul class="p0 m1">
-            <li option="S" class="" [class]="(product[product.selectedColor].sizes['S'] != 'unavailable')
-                      ? ''
-                      : 'unavailable'">S</li>
-            <li option="M" class="" selected [class]="(product[product.selectedColor].sizes['M'] != 'unavailable')
-                      ? ''
-                      : 'unavailable'">M</li>
-            <li option="L" class="unavailable" [class]="(product[product.selectedColor].sizes['L'] != 'unavailable')
-                      ? ''
-                      : 'unavailable'">L</li>
-          </ul>
-        </amp-selector>
-      </div>
-      <div class="items-center flex my1">
-        <input type="submit" class="ampstart-btn caps" name="add-to-cart" value="add to cart">
-      </div>
-      <input type="hidden" name="name" value="Apple">
-      <input type="hidden" name="price" value="$1.99">
-      <input name="clientId" type="hidden" value="CLIENT_ID(cart)" data-amp-replace="CLIENT_ID">
-      <div submit-error>
-        <template type="amp-mustache">
-          Error! Looks like something went wrong with your shopping cart, please try to add an item again. {{error}}
-        </template>
-      </div>
-    </form>
+            <ul class="p0 m1">
+              <li>
+                <div option="peppermint" selected class="square green"></div>
+              </li>
+              <li>
+                <div option="spearmint" class="square golden"></div>
+              </li>
+            </ul>
+          </amp-selector>
+        </div>
+        <div class="items-center flex">
+          <label for="quantity">Quantity:</label>
+          <amp-selector name="quantity" layout="container">
+            <ul class="p0 m1">
+              <li option="1" selected>1</li>
+              <li option="2">2</li>
+              <li option="3">3</li>
+            </ul>
+          </amp-selector>
+        </div>
+        <div class="items-center flex my1">
+          <input type="submit" class="ampstart-btn caps" name="add-to-cart" value="add to cart">
+        </div>
+        <input type="hidden" name="name" value="Apple">
+        <input type="hidden" name="price" value="$1.99">
+        <input name="clientId" type="hidden" value="CLIENT_ID(cart)" data-amp-replace="CLIENT_ID">
+        <div submit-error>
+          <template type="amp-mustache">
+            Error! Looks like something went wrong with your shopping cart, please try to add an item again. {{error}}
+          </template>
+        </div>
+      </form>
 
     <!-- ## Tab panels -->
     <!-- Use `amp-selector` styled as tab panels to add additional data about your product.
