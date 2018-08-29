@@ -131,7 +131,7 @@ This sample showcases how to build a product page in AMP HTML.
     .unavailable:after {
         -webkit-transform: rotate(45deg);
         transform: rotate(45deg);
-    }
+    } 
 
     @media (max-width: 1024px) {
       .product-gallery > ul {
@@ -1254,13 +1254,17 @@ This sample showcases how to build a product page in AMP HTML.
     color: #a50000;
     border-color: #a50000;
     text-decoration: underline; }
-  .gbcvs-c-variantSelectorButton.gbcvs-is-selected, .gbcvs-c-variantSelectorButton.gbcvs-is-selected:hover {
+  .gbcvs-c-variantSelectorButton.gbcvs-is-selected, 
+  .gbcvs-c-variantSelectorButton.gbcvs-is-selected:hover {
     color: #c00;
     border-color: #c00;
     pointer-events: none; }
-    .gbcvs-c-variantSelectorButton.gbcvs-is-selected .gbcvs-c-variantSelectorButton__swatch, .gbcvs-c-variantSelectorButton.gbcvs-is-selected:hover .gbcvs-c-variantSelectorButton__swatch {
+    .gbcvs-c-variantSelectorButton.gbcvs-is-selected 
+    .gbcvs-c-variantSelectorButton__swatch, 
+    .gbcvs-c-variantSelectorButton.gbcvs-is-selected:hover .gbcvs-c-variantSelectorButton__swatch {
       background-color: #c00 !important; }
-    .gbcvs-c-variantSelectorButton.gbcvs-is-selected .gbcvs-c-variantSelectorButton__check, .gbcvs-c-variantSelectorButton.gbcvs-is-selected:hover .gbcvs-c-variantSelectorButton__check {
+    .gbcvs-c-variantSelectorButton.gbcvs-is-selected .gbcvs-c-variantSelectorButton__check, 
+    .gbcvs-c-variantSelectorButton.gbcvs-is-selected:hover .gbcvs-c-variantSelectorButton__check {
       display: block; }
   .gbcvs-c-variantSelectorButton.gbcvs-is-disabled {
     opacity: 0.3;
@@ -1413,6 +1417,24 @@ This sample showcases how to build a product page in AMP HTML.
     padding-right: 16px; } }
 pdp-product-header-rating {
   display: flex; }
+
+
+  .gbcvs-c-variantSelectorButton[selected], 
+  .gbcvs-c-variantSelectorButton[selected]:hover {
+    color: #c00;
+    border-color: #c00;
+    pointer-events: none; }
+    .gbcvs-c-variantSelectorButton[selected] .gbcvs-c-variantSelectorButton__swatch, 
+    .gbcvs-c-variantSelectorButton[selected]:hover .gbcvs-c-variantSelectorButton__swatch {
+      background-color: #c00 !important; }
+    .gbcvs-c-variantSelectorButton[selected] .gbcvs-c-variantSelectorButton__check, 
+    .gbcvs-c-variantSelectorButton[selected]:hover .gbcvs-c-variantSelectorButton__check {
+      display: block; }
+
+      .gbcvs-c-variantSelectorButton--secondaryAlt[selected], 
+      .gbcvs-c-variantSelectorButton--secondaryAlt[selected]:hover {
+    box-shadow: inset 0 0 0 1px #c00;
+}
 
 
     /* ==========================================================================
@@ -1722,7 +1744,7 @@ pdp-product-header-rating {
                       >
                         <ul class=" gbcvs-c-variantSelectorList gbcvs-c-variantSelectorList--text ">
                           <li class="gbcvs-c-variantSelectorList__item  gbcvs-c-variantSelectorList__item--text">
-                            <button option="peppermint" selected aria-pressed="true" class="gbcvs-c-variantSelectorButton gbcvs-c-variantSelectorButton--secondaryAlt gbcvs-c-variantSelectorButton--text gbcvs-is-selected" aria-label="White Peppermint" title="White Peppermint">
+                            <button option="peppermint" selected aria-pressed="true" class="gbcvs-c-variantSelectorButton gbcvs-c-variantSelectorButton--secondaryAlt gbcvs-c-variantSelectorButton--text" aria-label="White Peppermint" title="White Peppermint">
                               <span class="gbcvs-c-variantSelectorButton__label">White Peppermint</span>
                               <div class="gbcvs-c-variantSelectorButton__check">
                                 <cvsui-icon name="icon-check--s" base="gbcvs-c-variantSelectorButton__checkIcon" class="gb-ui" role="undefined">
@@ -1758,7 +1780,7 @@ pdp-product-header-rating {
                     <amp-selector name="quantity" layout="container">
                       <ul class=" gbcvs-c-variantSelectorList gbcvs-c-variantSelectorList--text ">
                         <li class="gbcvs-c-variantSelectorList__item  gbcvs-c-variantSelectorList__item--text">
-                          <button aria-pressed="true" class="gbcvs-c-variantSelectorButton gbcvs-c-variantSelectorButton--secondaryAlt gbcvs-c-variantSelectorButton--text gbcvs-is-selected" aria-label="Quantity 1" title="Quantity 1" option="1" selected>
+                          <button aria-pressed="true" class="gbcvs-c-variantSelectorButton gbcvs-c-variantSelectorButton--secondaryAlt gbcvs-c-variantSelectorButton--text" aria-label="Quantity 1" title="Quantity 1" option="1" selected>
                             <span class="gbcvs-c-variantSelectorButton__label">1</span>
                             <div class="gbcvs-c-variantSelectorButton__check">
                               <cvsui-icon name="icon-check--s" base="gbcvs-c-variantSelectorButton__checkIcon" class="gb-ui" role="undefined">
