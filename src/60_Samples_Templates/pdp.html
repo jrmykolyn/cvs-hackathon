@@ -1099,7 +1099,7 @@ This sample showcases how to build a product page in AMP HTML.
     /* ==========================================================================
        Page Header
        ========================================================================== */
-    
+
        .gbcvs-c-pageHd {
       padding: 16px 0;
       background-color: #fff; }
@@ -1140,7 +1140,7 @@ This sample showcases how to build a product page in AMP HTML.
   /* ==========================================================================
      Product Pricing
      ========================================================================== */
-  
+
     .shoppdp-c-productPricing__promotion,
     .shoppdp-c-productPricing__promoLabel {
       font-size: 14px;
@@ -1233,6 +1233,14 @@ This sample showcases how to build a product page in AMP HTML.
      Sidebar - Shipping
      ========================================================================== */
 
+     .shoppdp-l__sidebar {
+  padding: 24px 16px;
+  background: #f2f2f2; }
+  .shoppdp-l__sidebar .gbcvs-c-variantSelector {
+    margin-bottom: 24px; }
+  .shoppdp-l__sidebar .gbcvs-c-pastPurchases {
+    margin-bottom: 8px; }
+
     .shoppdp-c-shipping {
   margin-top: 16px;
   padding-top: 16px;
@@ -1244,6 +1252,12 @@ This sample showcases how to build a product page in AMP HTML.
 .shoppdp-c-shipping__heading {
   font-weight: bold; }
 
+  /* ==========================================================================
+     YMAL Tiles
+     ========================================================================== */
+  .tile {
+
+  }
 
   /* ==========================================================================
      Variant Selector
@@ -1485,6 +1499,55 @@ pdp-product-header-rating {
   display: flex; }
 
 
+  .tile--ymal p {
+      font-size: 12px;
+      padding-left: 0;
+      padding-right: 0;
+  }
+
+  .tile--ymal button {
+    width: 100%;
+    color: #fff;
+    background: #c00;
+    padding: 12px 6px;
+    border: 0;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 14px;
+  }
+
+  .tile--ymal .price {
+      color: #c00;
+      font-size: 18px;
+      font-weight: bold;
+      line-height: 1;
+      margin: 0;
+  }
+
+  .tile--ymal .unit-price {
+    color: #767676;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 1;
+    margin: 3px 0 0;
+  }
+
+  .tile--ymal .promo {
+    font-weight: bold;
+  }
+
+  .tile--ymal .name {
+    color: #000;
+    margin: 6px 0;
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  .tile--ymal .rating {
+      width: 100%;
+      height: 20px;
+      background: #efefef;
+  }
   </style>
 
   <!-- ## Metadata -->
@@ -1714,71 +1777,107 @@ pdp-product-header-rating {
 
     <!-- We use the `CLIENT_ID` variable to identify the user, this enables storing a shopping cart between repeated visits of an AMP page (either via the AMP Cache or the original host). This variable can be used inside an amp-form by declaring an hidden input value with `default-value="CLIENT_ID(cart)`. Read more about variable substitution [here](https://github.com/ampproject/amphtml/blob/master/spec/amp-var-substitutions.md). -->
     <div class="shoppdp-l__sidebar">
-        <form id="order" method="POST"
-        action-xhr="/samples_templates/product_page/add_to_cart"
-        target="_top" class="flex flex-wrap m1 shoppdp-c-form">
-          <div class="items-center flex">
-            <label for="color">Flavor:</label>
-            <amp-selector name="Flavor"
-                    layout="container"
-                    [selected]="product.selectedFlavor"
-                    on="select:AMP.setState({
-                      product: {
-                        selectedFlavor: event.targetOption,
-                        selectedSlideForPeppermint: 0,
-                        selectedSlideForYellow: 0,
-                      }
-                    })">
-              <ul class="p0 m1">
-                <li>
-                  <div option="peppermint" selected class="square green"></div>
-                </li>
-                <li>
-                  <div option="spearmint" class="square golden"></div>
-                </li>
-              </ul>
-            </amp-selector>
-          </div>
-          <div class="items-center flex">
-            <label for="quantity">Quantity:</label>
-            <amp-selector name="quantity" layout="container">
-              <ul class="p0 m1">
-                <li option="1" selected>1</li>
-                <li option="2">2</li>
-                <li option="3">3</li>
-              </ul>
-            </amp-selector>
-          </div>
+        <form id="order" method="POST" action-xhr="/samples_templates/product_page/add_to_cart" target="_top" class="shoppdp-c-form">
+          <gbcvs-variant-selector class="gbcvs-c-variantSelector--pdp gb-ui">
+              <gbcvs-variant-selector-row level="0" class="gb-ui" role="undefined">
+                <div class="gbcvs-c-variantSelector gbcvs-c-variantSelector--ALT gbcvs-c-variantSelector--scrollHorizontal@<mi">
+                <div class="gbcvs-c-variantSelector__inner">
+                  <label for="quantity" class="gbcvs-c-variantSelector__label"><strong class="gbcvs-c-variantSelector__category">Flavor:</strong> White Peppermint</label>
+                  <div class="gbcvs-c-variantSelector__body ">
+                    <nav class="gbcvs-c-variantSelector__group ">
+                      <amp-selector 
+                        name="Flavor"
+                        layout="container"
+                        [selected]="product.selectedFlavor"
+                        on="select:AMP.setState({
+                          product: {
+                            selectedFlavor: event.targetOption,
+                            selectedSlideForPeppermint: 0,
+                            selectedSlideForYellow: 0,
+                          }
+                        })"
+                      >
+                        <ul class=" gbcvs-c-variantSelectorList gbcvs-c-variantSelectorList--text ">
+                          <li class="gbcvs-c-variantSelectorList__item  gbcvs-c-variantSelectorList__item--text">
+                            <button option="peppermint" selected aria-pressed="true" class="gbcvs-c-variantSelectorButton gbcvs-c-variantSelectorButton--secondaryAlt gbcvs-c-variantSelectorButton--text gbcvs-is-selected" aria-label="White Peppermint" title="White Peppermint">
+                              <span class="gbcvs-c-variantSelectorButton__label">White Peppermint</span>
+                              <div class="gbcvs-c-variantSelectorButton__check">
+                                <cvsui-icon name="icon-check--s" base="gbcvs-c-variantSelectorButton__checkIcon" class="gb-ui" role="undefined">
+                                  <svg class="gbcvs-c-variantSelectorButton__checkIcon   ">
+                                    <use xlink:href="https://www.cvs.com/bizcontent/cvs-design-system/cvsui-icons/cvsui-icons.svg#icon-check--s"></use>
+                                  </svg>
+                                </cvsui-icon>
+                              </div>
+                            </button>
+                          </li>
+                          <li class="gbcvs-c-variantSelectorList__item  gbcvs-c-variantSelectorList__item--text">
+                            <button option="spearmint" aria-pressed="false" class="gbcvs-c-variantSelectorButton gbcvs-c-variantSelectorButton--secondaryAlt gbcvs-c-variantSelectorButton--text" aria-label="White Spearmint" title="White Spearmint">
+                              <span class="gbcvs-c-variantSelectorButton__label">White Spearmint</span>
+                              <div class="gbcvs-c-variantSelectorButton__check"></div>
+                            </button>
+                          </li>
+                        </ul>
+                      </amp-selector>
+                    </nav>
+                  </div>
+                </div>
+                </div>
+              </gbcvs-variant-selector-row>
+            </gbcvs-variant-selector>
 
           <gbcvs-variant-selector class="gbcvs-c-variantSelector--pdp gb-ui">
             <gbcvs-variant-selector-row level="0" class="gb-ui" role="undefined">
               <div class="gbcvs-c-variantSelector gbcvs-c-variantSelector--ALT gbcvs-c-variantSelector--scrollHorizontal@<mi">
               <div class="gbcvs-c-variantSelector__inner">
-                <div class="gbcvs-c-variantSelector__label"><strong class="gbcvs-c-variantSelector__category">Flavor:</strong> White Peppermint</div>
+                <label for="quantity" class="gbcvs-c-variantSelector__label"><strong class="gbcvs-c-variantSelector__category">Quantity:</strong> 1</label>
                 <div class="gbcvs-c-variantSelector__body ">
                   <nav class="gbcvs-c-variantSelector__group ">
-                    <ul class=" gbcvs-c-variantSelectorList gbcvs-c-variantSelectorList--text ">
-                      <li class="gbcvs-c-variantSelectorList__item  gbcvs-c-variantSelectorList__item--text ">
-                        <button aria-pressed="true" class="gbcvs-c-variantSelectorButton gbcvs-c-variantSelectorButton--secondaryAlt
-                          gbcvs-c-variantSelectorButton--text gbcvs-is-selected" aria-label="Flavor variant; White Peppermint; option 1 of 2" title="White Peppermint">
-                          <span class="gbcvs-c-variantSelectorButton__label">White Peppermint</span>
-                          <div class="gbcvs-c-variantSelectorButton__check">
-                            <cvsui-icon name="icon-check--s" base="gbcvs-c-variantSelectorButton__checkIcon" class="gb-ui" role="undefined">
-                              <svg class="gbcvs-c-variantSelectorButton__checkIcon   ">
-                                <use xlink:href="https://www.cvs.com/bizcontent/cvs-design-system/cvsui-icons/cvsui-icons.svg#icon-check--s"></use>
-                              </svg>
-                            </cvsui-icon>
-                          </div>
-                        </button>
-                      </li>
-                      <li class="gbcvs-c-variantSelectorList__item  gbcvs-c-variantSelectorList__item--text ">
-                        <button aria-pressed="false" class="gbcvs-c-variantSelectorButton gbcvs-c-variantSelectorButton--secondaryAlt
-                          gbcvs-c-variantSelectorButton--text" aria-label="Flavor variant; White Spearmint; option 2 of 2" title="White Spearmint">
-                          <span class="gbcvs-c-variantSelectorButton__label">White Spearmint</span>
-                          <div class="gbcvs-c-variantSelectorButton__check"></div>
-                        </button>
-                      </li>
-                    </ul>
+                    <amp-selector name="quantity" layout="container">
+                      <ul class=" gbcvs-c-variantSelectorList gbcvs-c-variantSelectorList--text ">
+                        <li class="gbcvs-c-variantSelectorList__item  gbcvs-c-variantSelectorList__item--text">
+                          <button aria-pressed="true" class="gbcvs-c-variantSelectorButton gbcvs-c-variantSelectorButton--secondaryAlt gbcvs-c-variantSelectorButton--text gbcvs-is-selected" aria-label="Quantity 1" title="Quantity 1" option="1" selected>
+                            <span class="gbcvs-c-variantSelectorButton__label">1</span>
+                            <div class="gbcvs-c-variantSelectorButton__check">
+                              <cvsui-icon name="icon-check--s" base="gbcvs-c-variantSelectorButton__checkIcon" class="gb-ui" role="undefined">
+                                <svg class="gbcvs-c-variantSelectorButton__checkIcon   ">
+                                  <use xlink:href="https://www.cvs.com/bizcontent/cvs-design-system/cvsui-icons/cvsui-icons.svg#icon-check--s"></use>
+                                </svg>
+                              </cvsui-icon>
+                            </div>
+                          </button>
+                        </li>
+                        <li class="gbcvs-c-variantSelectorList__item  gbcvs-c-variantSelectorList__item--text">
+                          <button aria-pressed="false" class="gbcvs-c-variantSelectorButton gbcvs-c-variantSelectorButton--secondaryAlt gbcvs-c-variantSelectorButton--text" aria-label="Quantity 2" title="Quantity 2" option="2">
+                            <span class="gbcvs-c-variantSelectorButton__label">2</span>
+                            <div class="gbcvs-c-variantSelectorButton__check"></div>
+                          </button>
+                        </li>
+                        <li class="gbcvs-c-variantSelectorList__item  gbcvs-c-variantSelectorList__item--text">
+                            <button aria-pressed="false" class="gbcvs-c-variantSelectorButton gbcvs-c-variantSelectorButton--secondaryAlt gbcvs-c-variantSelectorButton--text" aria-label="Quantity 3" title="Quantity 3" option="3">
+                              <span class="gbcvs-c-variantSelectorButton__label">3</span>
+                              <div class="gbcvs-c-variantSelectorButton__check"></div>
+                            </button>
+                          </li>
+                          <li class="gbcvs-c-variantSelectorList__item  gbcvs-c-variantSelectorList__item--text">
+                              <button aria-pressed="false" class="gbcvs-c-variantSelectorButton gbcvs-c-variantSelectorButton--secondaryAlt gbcvs-c-variantSelectorButton--text" aria-label="Quantity 4" title="Quantity 4" option="4">
+                                <span class="gbcvs-c-variantSelectorButton__label">4</span>
+                                <div class="gbcvs-c-variantSelectorButton__check"></div>
+                              </button>
+                            </li>
+                            <li class="gbcvs-c-variantSelectorList__item  gbcvs-c-variantSelectorList__item--text">
+                                <button aria-pressed="false" class="gbcvs-c-variantSelectorButton gbcvs-c-variantSelectorButton--secondaryAlt gbcvs-c-variantSelectorButton--text" aria-label="Quantity 5" title="Quantity 5" option="5">
+                                  <span class="gbcvs-c-variantSelectorButton__label">5</span>
+                                  <div class="gbcvs-c-variantSelectorButton__check"></div>
+                                </button>
+                              </li>
+                              <li class="gbcvs-c-variantSelectorList__item  gbcvs-c-variantSelectorList__item--text">
+                                  <button aria-pressed="false" class="gbcvs-c-variantSelectorButton gbcvs-c-variantSelectorButton--secondaryAlt gbcvs-c-variantSelectorButton--text" aria-label="Quantity 6" title="Quantity 6" option="6">
+                                    <span class="gbcvs-c-variantSelectorButton__label">6</span>
+                                    <div class="gbcvs-c-variantSelectorButton__check"></div>
+                                  </button>
+                                </li>
+                      </ul>
+                    </amp-selector>
                   </nav>
                 </div>
               </div>
@@ -1829,7 +1928,8 @@ pdp-product-header-rating {
     <!-- ## Dynamic Related Product Lists -->
     <!--  -->
     <div class="items-center flex">
-      <h2 id="related-products" class="m1 inline-block">Related products
+      <h2 id="related-products" class="m1 inline-block">
+        You May Also Like
         <amp-lightbox id="my-lightbox" layout="nodisplay">
           <div class="lightbox" on="tap:my-lightbox.close" role="button" tabindex="0">
             <div class="info">
@@ -1848,13 +1948,34 @@ pdp-product-header-rating {
     With AMP, you can easily pull in different latest offers or highlights without changing the page. To do so, just use `amp-list` to fire a CORS request to a JSON endpoint which supplies the list of related products. These are populated into an amp-mustache template on the client.
     Learn more about `amp-list` [here](/components/amp-list/).
     -->
-    <amp-list class="items m1" width="auto" height="145" layout="fixed-height" src="https://b46a02bc.ngrok.io/product/1990031" [src]="myState.items" id="show-more-list">
+    <amp-list
+        class="items m1"
+        width="auto"
+        height="350"
+        layout="fixed-height"
+        src="https://b46a02bc.ngrok.io/ymal/1990031"
+        [src]="myState.items"
+        id="show-more-list"
+    >
       <template type="amp-mustache">
-        <a class="text-decoration-none p1" href="/samples_templates/product_page/preview/">
-          <amp-img width="70.31" height="46.8" layout="fixed" alt="{{name}}" src="{{img}}"></amp-img>
+        <a
+            class="tile tile--ymal"
+            href="/samples_templates/product_page/preview/"
+        >
+          <amp-img
+            width="100"
+            height="100"
+            layout="fixed"
+            alt="{{name}}"
+            src="{{img}}"
+          ></amp-img>
+          <button>Add To Basket</button>
+          <!-- // TODO: Pull in data from feed. -->
+          <p class="price">Price</p>
+          <p class="unit-price">(Unit Price)</p>
+          <p class="promo">Promo Message</p>
           <p class="name">{{name}}</p>
-          <p class="star">{{{stars}}}</p>
-          <p class="price">${{price}}</p>
+          <p class="rating"><!-- // TODO --></p>
         </a>
       </template>
     </amp-list>
